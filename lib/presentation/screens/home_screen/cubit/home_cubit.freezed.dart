@@ -23,6 +23,7 @@ mixin _$HomeState {
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function(ThemeType theme) changeThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$HomeState {
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function(ThemeType theme)? changeThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$HomeState {
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function(ThemeType theme)? changeThemeMode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -50,6 +53,7 @@ mixin _$HomeState {
     required TResult Function(_HomeStateError value) error,
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +61,7 @@ mixin _$HomeState {
     TResult? Function(_HomeStateLoaded value)? loaded,
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$HomeState {
     TResult Function(_HomeStateLoaded value)? loaded,
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -184,6 +190,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function(ThemeType theme) changeThemeMode,
   }) {
     return loaded(repositories, loading, loadingMore);
   }
@@ -196,6 +203,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function(ThemeType theme)? changeThemeMode,
   }) {
     return loaded?.call(repositories, loading, loadingMore);
   }
@@ -208,6 +216,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function(ThemeType theme)? changeThemeMode,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -223,6 +232,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     required TResult Function(_HomeStateError value) error,
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
   }) {
     return loaded(this);
   }
@@ -233,6 +243,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     TResult? Function(_HomeStateLoaded value)? loaded,
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
   }) {
     return loaded?.call(this);
   }
@@ -243,6 +254,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     TResult Function(_HomeStateLoaded value)? loaded,
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -333,6 +345,7 @@ class _$_HomeStateError implements _HomeStateError {
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function(ThemeType theme) changeThemeMode,
   }) {
     return error(this.error);
   }
@@ -345,6 +358,7 @@ class _$_HomeStateError implements _HomeStateError {
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function(ThemeType theme)? changeThemeMode,
   }) {
     return error?.call(this.error);
   }
@@ -357,6 +371,7 @@ class _$_HomeStateError implements _HomeStateError {
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function(ThemeType theme)? changeThemeMode,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -372,6 +387,7 @@ class _$_HomeStateError implements _HomeStateError {
     required TResult Function(_HomeStateError value) error,
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
   }) {
     return error(this);
   }
@@ -382,6 +398,7 @@ class _$_HomeStateError implements _HomeStateError {
     TResult? Function(_HomeStateLoaded value)? loaded,
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
   }) {
     return error?.call(this);
   }
@@ -392,6 +409,7 @@ class _$_HomeStateError implements _HomeStateError {
     TResult Function(_HomeStateLoaded value)? loaded,
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -480,6 +498,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function(ThemeType theme) changeThemeMode,
   }) {
     return showErrorSnackBar(this.error);
   }
@@ -492,6 +511,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function(ThemeType theme)? changeThemeMode,
   }) {
     return showErrorSnackBar?.call(this.error);
   }
@@ -504,6 +524,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function(ThemeType theme)? changeThemeMode,
     required TResult orElse(),
   }) {
     if (showErrorSnackBar != null) {
@@ -519,6 +540,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     required TResult Function(_HomeStateError value) error,
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
   }) {
     return showErrorSnackBar(this);
   }
@@ -529,6 +551,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     TResult? Function(_HomeStateLoaded value)? loaded,
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
   }) {
     return showErrorSnackBar?.call(this);
   }
@@ -539,6 +562,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     TResult Function(_HomeStateLoaded value)? loaded,
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
     required TResult orElse(),
   }) {
     if (showErrorSnackBar != null) {
@@ -556,5 +580,161 @@ abstract class _HomeStateShowErrorSnackBar
   Object get error;
   @JsonKey(ignore: true)
   _$$_HomeStateShowErrorSnackBarCopyWith<_$_HomeStateShowErrorSnackBar>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_HomeStateChangeThemeModeCopyWith<$Res> {
+  factory _$$_HomeStateChangeThemeModeCopyWith(
+          _$_HomeStateChangeThemeMode value,
+          $Res Function(_$_HomeStateChangeThemeMode) then) =
+      __$$_HomeStateChangeThemeModeCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ThemeType theme});
+}
+
+/// @nodoc
+class __$$_HomeStateChangeThemeModeCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$_HomeStateChangeThemeMode>
+    implements _$$_HomeStateChangeThemeModeCopyWith<$Res> {
+  __$$_HomeStateChangeThemeModeCopyWithImpl(_$_HomeStateChangeThemeMode _value,
+      $Res Function(_$_HomeStateChangeThemeMode) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = null,
+  }) {
+    return _then(_$_HomeStateChangeThemeMode(
+      null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as ThemeType,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
+  const _$_HomeStateChangeThemeMode(this.theme);
+
+  @override
+  final ThemeType theme;
+
+  @override
+  String toString() {
+    return 'HomeState.changeThemeMode(theme: $theme)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_HomeStateChangeThemeMode &&
+            (identical(other.theme, theme) || other.theme == theme));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, theme);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_HomeStateChangeThemeModeCopyWith<_$_HomeStateChangeThemeMode>
+      get copyWith => __$$_HomeStateChangeThemeModeCopyWithImpl<
+          _$_HomeStateChangeThemeMode>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Repository> repositories, bool loading, bool loadingMore)
+        loaded,
+    required TResult Function(Object error) error,
+    required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function(ThemeType theme) changeThemeMode,
+  }) {
+    return changeThemeMode(theme);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            List<Repository> repositories, bool loading, bool loadingMore)?
+        loaded,
+    TResult? Function(Object error)? error,
+    TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function(ThemeType theme)? changeThemeMode,
+  }) {
+    return changeThemeMode?.call(theme);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            List<Repository> repositories, bool loading, bool loadingMore)?
+        loaded,
+    TResult Function(Object error)? error,
+    TResult Function(Object error)? showErrorSnackBar,
+    TResult Function(ThemeType theme)? changeThemeMode,
+    required TResult orElse(),
+  }) {
+    if (changeThemeMode != null) {
+      return changeThemeMode(theme);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeStateLoaded value) loaded,
+    required TResult Function(_HomeStateError value) error,
+    required TResult Function(_HomeStateShowErrorSnackBar value)
+        showErrorSnackBar,
+    required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+  }) {
+    return changeThemeMode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HomeStateLoaded value)? loaded,
+    TResult? Function(_HomeStateError value)? error,
+    TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+  }) {
+    return changeThemeMode?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeStateLoaded value)? loaded,
+    TResult Function(_HomeStateError value)? error,
+    TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    required TResult orElse(),
+  }) {
+    if (changeThemeMode != null) {
+      return changeThemeMode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HomeStateChangeThemeMode
+    implements HomeState, HomeStateListener {
+  const factory _HomeStateChangeThemeMode(final ThemeType theme) =
+      _$_HomeStateChangeThemeMode;
+
+  ThemeType get theme;
+  @JsonKey(ignore: true)
+  _$$_HomeStateChangeThemeModeCopyWith<_$_HomeStateChangeThemeMode>
       get copyWith => throw _privateConstructorUsedError;
 }

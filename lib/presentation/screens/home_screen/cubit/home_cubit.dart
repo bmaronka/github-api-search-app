@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repositories_use_case.dart';
+import 'package:github_search_app/style/themes.dart';
 import 'package:github_search_app/utils/safety_cubit.dart';
 import 'package:injectable/injectable.dart';
 
@@ -29,12 +30,16 @@ class HomeCubit extends AppCubit<HomeState> {
 
   final ScrollController scrollController = ScrollController();
   final _repositories = <Repository>[];
+  late ThemeType _themeType;
   int _page = 1;
   String _query = '';
 
   bool get _isScrolledToBottom => scrollController.position.maxScrollExtent == scrollController.offset;
 
-  void init() => _addLoadMoreListener();
+  void init(ThemeType theme) {
+    _themeType = theme;
+    _addLoadMoreListener();
+  }
 
   void _addLoadMoreListener() => scrollController.addListener(_loadMore);
 
@@ -90,6 +95,12 @@ class HomeCubit extends AppCubit<HomeState> {
       _emitListenerState(HomeState.showErrorSnackBar(error));
       emit(HomeState.error(error));
     }
+  }
+
+  void switchTheme() {
+    _themeType = _themeType == ThemeType.light ? ThemeType.dark : ThemeType.light;
+
+    _emitListenerState(HomeState.changeThemeMode(_themeType));
   }
 
   void _emitLoaded({bool loading = false, bool loadingMore = false}) => emit(

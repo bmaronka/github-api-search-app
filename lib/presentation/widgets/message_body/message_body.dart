@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_search_app/generated/l10n.dart';
+import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 import 'package:github_search_app/style/dimens.dart';
 
 class MessageBody extends StatelessWidget {
@@ -59,7 +60,7 @@ class MessageBody extends StatelessWidget {
       );
 
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => AppScaffold(
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.all(Dimens.m),

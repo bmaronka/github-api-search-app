@@ -5,6 +5,7 @@ import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/presentation/screens/home_screen/cubit/home_cubit.dart';
 import 'package:github_search_app/presentation/screens/home_screen/widgets/repository_tile.dart';
 import 'package:github_search_app/presentation/widgets/loader/loader.dart';
+import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 import 'package:github_search_app/style/dimens.dart';
 
 class HomeScreenBody extends HookWidget {
@@ -25,11 +26,11 @@ class HomeScreenBody extends HookWidget {
   Widget build(BuildContext context) {
     final controller = useTextEditingController();
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(Strings.of(context).appTitle),
-        centerTitle: true,
-      ),
+    return AppScaffold(
+      title: Strings.of(context).appTitle,
+      actions: [
+        _buildThemeSwitch(),
+      ],
       body: Padding(
         padding: EdgeInsets.all(Dimens.m),
         child: Column(
@@ -43,6 +44,11 @@ class HomeScreenBody extends HookWidget {
       ),
     );
   }
+
+  Widget _buildThemeSwitch() => IconButton(
+        onPressed: cubit.switchTheme,
+        icon: const Icon(Icons.sunny),
+      );
 
   Widget _buildSearchField(BuildContext context, TextEditingController controller) => TextField(
         controller: controller,

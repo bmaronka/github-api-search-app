@@ -20,8 +20,8 @@ dependencies:
   auto_route: 7.8.3
   freezed: 2.4.1
   mockito: 5.4.2
-  bloc_test: 9.1.4
   webview_flutter: 4.2.4
+  provider: 6.0.5
 
   #Https
   dio: 5.3.2
@@ -33,6 +33,7 @@ dependencies:
   #Bloc
   flutter_bloc: 8.1.3
   hooked_bloc: 1.4.2
+  bloc_test: 9.1.4
 
   #Utils
   flutter_device_type: 0.4.0

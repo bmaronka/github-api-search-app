@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:github_search_app/domain/repositories/model/issue.dart';
-import 'package:github_search_app/style/colors.dart';
+import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/style/dimens.dart';
 
-class StatusBadge extends StatelessWidget {
+class StatusBadge extends StatelessWidget with ExtensionMixin {
   const StatusBadge({
     required this.status,
     super.key,
@@ -16,9 +16,9 @@ class StatusBadge extends StatelessWidget {
         label: Text(status.label),
         labelStyle: TextStyle(
           fontSize: Dimens.s,
-          color: AppStandardColors.white,
+          color: context.getColors().white,
         ),
         visualDensity: const VisualDensity(vertical: VisualDensity.minimumDensity),
-        backgroundColor: status.color,
+        backgroundColor: status.getColor(context),
       );
 }

@@ -4,7 +4,6 @@ import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/presentation/routing/router.gr.dart';
 import 'package:github_search_app/presentation/widgets/avatar/avatar.dart';
 import 'package:github_search_app/presentation/widgets/stars_badge/starts_badge.dart';
-import 'package:github_search_app/style/dimens.dart';
 
 class RepositoryTile extends StatelessWidget {
   const RepositoryTile({
@@ -15,16 +14,17 @@ class RepositoryTile extends StatelessWidget {
   final Repository repository;
 
   @override
-  Widget build(BuildContext context) => ListTile(
-        leading: _buildLeading(),
-        title: _buildTitle(),
-        subtitle: _buildSubtitle(),
-        trailing: StarsBadge(starsCount: repository.stars),
-        visualDensity: const VisualDensity(
-          horizontal: VisualDensity.minimumDensity,
+  Widget build(BuildContext context) => Card(
+        child: ListTile(
+          leading: _buildLeading(),
+          title: _buildTitle(),
+          subtitle: _buildSubtitle(),
+          trailing: StarsBadge(starsCount: repository.stars),
+          visualDensity: const VisualDensity(
+            horizontal: VisualDensity.minimumDensity,
+          ),
+          onTap: () => _navigateToRepositoryDetails(context),
         ),
-        contentPadding: const EdgeInsets.all(Dimens.zero),
-        onTap: () => _navigateToRepositoryDetails(context),
       );
 
   Widget _buildLeading() => AppAvatar(

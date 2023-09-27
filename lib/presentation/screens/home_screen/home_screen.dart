@@ -5,9 +5,11 @@ import 'package:github_search_app/presentation/screens/error_page/error_page.dar
 import 'package:github_search_app/presentation/screens/home_screen/body/home_screen_body.dart';
 import 'package:github_search_app/presentation/screens/home_screen/cubit/home_cubit.dart';
 import 'package:github_search_app/presentation/widgets/alert/snack_bar.dart';
+import 'package:github_search_app/style/themes.dart';
 import 'package:github_search_app/utils/or_else_handlers.dart';
 import 'package:github_search_app/utils/use_once.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
+import 'package:provider/provider.dart';
 
 @RoutePage()
 class HomeScreen extends HookWidget {
@@ -25,7 +27,7 @@ class HomeScreen extends HookWidget {
       _listener,
       listenWhen: _listenWhen,
     );
-    useOnce(cubit.init);
+    useOnce(() => cubit.init(Provider.of<AppThemeModel>(context, listen: false).currentTheme));
 
     return state.maybeWhen(
       loaded: (repositories, loading, loadingMore) => HomeScreenBody(
@@ -48,6 +50,7 @@ class HomeScreen extends HookWidget {
 
   void _listener(_, HomeState state, BuildContext context) => state.maybeWhen(
         showErrorSnackBar: context.showErrorSnackBar,
+        changeThemeMode: (theme) => Provider.of<AppThemeModel>(context, listen: false).setTheme = theme,
         orElse: doNothing,
       );
 }

@@ -4,6 +4,7 @@ import 'package:github_search_app/data/model/offline_error.dart';
 import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/presentation/routing/router.gr.dart';
 import 'package:github_search_app/presentation/widgets/message_body/message_body.dart';
+import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 
 @RoutePage()
 class ErrorPage extends StatelessWidget {
@@ -23,11 +24,8 @@ class ErrorPage extends StatelessWidget {
       : title ?? Strings.current.unspecifiedErrorTitle;
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(_title),
-          centerTitle: true,
-        ),
+  Widget build(BuildContext context) => AppScaffold(
+        title: _title,
         body: MessageBody.error(
           title: _title,
           onConfirm: onConfirm ?? () => context.router.popUntilRouteWithName(HomeRoute.name),

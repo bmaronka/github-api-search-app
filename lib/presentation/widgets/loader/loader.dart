@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:github_search_app/style/colors.dart';
+import 'package:github_search_app/extensions/extension_mixin.dart';
 
 const _defaultLoaderRadius = 10.0;
 
-class AppLoader extends StatelessWidget {
+class AppLoader extends StatelessWidget with ExtensionMixin {
   final Color? color;
   final double? radius;
 
@@ -16,7 +16,7 @@ class AppLoader extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
         child: CupertinoActivityIndicator(
-          color: color ?? AppStandardColors.black,
+          color: color ?? context.getColors().black,
           radius: radius ?? _defaultLoaderRadius,
         ),
       );

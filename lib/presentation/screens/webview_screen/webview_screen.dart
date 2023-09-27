@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/presentation/widgets/loader/loader.dart';
+import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 @RoutePage()
@@ -35,11 +36,8 @@ class _WebViewScreen extends State<WebViewScreen> {
   }
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(Strings.of(context).webviewScreenTitle),
-          centerTitle: true,
-        ),
+  Widget build(BuildContext context) => AppScaffold(
+        title: Strings.of(context).webviewScreenTitle,
         body: _loading ? const AppLoader() : WebViewWidget(controller: _controller),
       );
 }

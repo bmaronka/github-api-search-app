@@ -14,6 +14,9 @@ class HomeState with _$HomeState {
 
   @Implements<HomeStateListener>()
   const factory HomeState.showErrorSnackBar(Object error) = _HomeStateShowErrorSnackBar;
+
+  @Implements<HomeStateListener>()
+  const factory HomeState.changeThemeMode(ThemeType theme) = _HomeStateChangeThemeMode;
 }
 
 abstract class HomeStateBuilder {}

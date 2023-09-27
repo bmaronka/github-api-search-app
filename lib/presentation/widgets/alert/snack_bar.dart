@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:github_search_app/data/model/offline_error.dart';
+import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/generated/l10n.dart';
-import 'package:github_search_app/style/colors.dart';
 import 'package:github_search_app/style/dimens.dart';
 
-class AppSnackBar extends StatelessWidget {
+class AppSnackBar extends StatelessWidget with ExtensionMixin {
   final Color color;
   final String title;
 
@@ -36,7 +36,7 @@ class AppSnackBar extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(color: AppStandardColors.white),
+                      style: TextStyle(color: context.getColors().white),
                     ),
                   ],
                 ),
@@ -51,20 +51,20 @@ extension AppSnackBarDisplayer on BuildContext {
   void showErrorSnackBar(Object error) => _showSnackBar(
         AppSnackBar(
           title: error.isOfflineError ? Strings.of(this).offlineErrorTitle : Strings.of(this).unspecifiedErrorTitle,
-          color: AppStandardColors.red,
+          color: getColors().red,
         ),
       );
 
   void showBottomSnackBar({required String title, Color? color}) => _showSnackBar(
         AppSnackBar(
           title: title,
-          color: color ?? AppStandardColors.green,
+          color: color ?? getColors().green,
         ),
       );
 
   void _showSnackBar(AppSnackBar snackBar) => ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
-          backgroundColor: AppStandardColors.transparent,
+          backgroundColor: getColors().transparent,
           elevation: 0,
           content: snackBar,
         ),

@@ -6,6 +6,7 @@ import 'package:github_search_app/presentation/screens/repository_details_screen
 import 'package:github_search_app/presentation/screens/repository_details_screen/widgets/issue_tile.dart';
 import 'package:github_search_app/presentation/widgets/avatar/avatar.dart';
 import 'package:github_search_app/presentation/widgets/loader/loader.dart';
+import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 import 'package:github_search_app/presentation/widgets/stars_badge/starts_badge.dart';
 import 'package:github_search_app/style/dimens.dart';
 
@@ -24,11 +25,8 @@ class RepositoryDetailsBody extends StatelessWidget {
   final bool loadingMore;
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(Strings.of(context).repositoryDetailsScreenTitle),
-          centerTitle: true,
-        ),
+  Widget build(BuildContext context) => AppScaffold(
+        title: Strings.of(context).repositoryDetailsScreenTitle,
         body: Padding(
           padding: EdgeInsets.all(Dimens.m),
           child: Column(
