@@ -14,5 +14,6 @@
   "issues": "Issues",
   "webviewScreenTitle": "Github",
   "open": "Open",
-  "closed": "Closed"
+  "closed": "Closed",
+  "emptyRepositories": "Unfortunately, there are no repositories. Please, try different phrase"
 }

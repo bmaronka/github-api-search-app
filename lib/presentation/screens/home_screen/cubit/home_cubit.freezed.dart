@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)
+    required TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
@@ -28,8 +28,8 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult? Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
@@ -38,8 +38,8 @@ mixin _$HomeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
@@ -98,7 +98,11 @@ abstract class _$$_HomeStateLoadedCopyWith<$Res> {
           _$_HomeStateLoaded value, $Res Function(_$_HomeStateLoaded) then) =
       __$$_HomeStateLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Repository> repositories, bool loading, bool loadingMore});
+  $Res call(
+      {List<Repository> repositories,
+      bool loading,
+      bool loadingMore,
+      bool wasSearched});
 }
 
 /// @nodoc
@@ -115,6 +119,7 @@ class __$$_HomeStateLoadedCopyWithImpl<$Res>
     Object? repositories = null,
     Object? loading = null,
     Object? loadingMore = null,
+    Object? wasSearched = null,
   }) {
     return _then(_$_HomeStateLoaded(
       repositories: null == repositories
@@ -129,6 +134,10 @@ class __$$_HomeStateLoadedCopyWithImpl<$Res>
           ? _value.loadingMore
           : loadingMore // ignore: cast_nullable_to_non_nullable
               as bool,
+      wasSearched: null == wasSearched
+          ? _value.wasSearched
+          : wasSearched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -139,7 +148,8 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
   const _$_HomeStateLoaded(
       {required final List<Repository> repositories,
       required this.loading,
-      required this.loadingMore})
+      required this.loadingMore,
+      required this.wasSearched})
       : _repositories = repositories;
 
   final List<Repository> _repositories;
@@ -154,10 +164,12 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
   final bool loading;
   @override
   final bool loadingMore;
+  @override
+  final bool wasSearched;
 
   @override
   String toString() {
-    return 'HomeState.loaded(repositories: $repositories, loading: $loading, loadingMore: $loadingMore)';
+    return 'HomeState.loaded(repositories: $repositories, loading: $loading, loadingMore: $loadingMore, wasSearched: $wasSearched)';
   }
 
   @override
@@ -169,12 +181,18 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
                 .equals(other._repositories, _repositories) &&
             (identical(other.loading, loading) || other.loading == loading) &&
             (identical(other.loadingMore, loadingMore) ||
-                other.loadingMore == loadingMore));
+                other.loadingMore == loadingMore) &&
+            (identical(other.wasSearched, wasSearched) ||
+                other.wasSearched == wasSearched));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_repositories), loading, loadingMore);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_repositories),
+      loading,
+      loadingMore,
+      wasSearched);
 
   @JsonKey(ignore: true)
   @override
@@ -185,34 +203,34 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)
+    required TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function(ThemeType theme) changeThemeMode,
   }) {
-    return loaded(repositories, loading, loadingMore);
+    return loaded(repositories, loading, loadingMore, wasSearched);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult? Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function(ThemeType theme)? changeThemeMode,
   }) {
-    return loaded?.call(repositories, loading, loadingMore);
+    return loaded?.call(repositories, loading, loadingMore, wasSearched);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
@@ -220,7 +238,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(repositories, loading, loadingMore);
+      return loaded(repositories, loading, loadingMore, wasSearched);
     }
     return orElse();
   }
@@ -268,11 +286,13 @@ abstract class _HomeStateLoaded implements HomeState, HomeStateBuilder {
   const factory _HomeStateLoaded(
       {required final List<Repository> repositories,
       required final bool loading,
-      required final bool loadingMore}) = _$_HomeStateLoaded;
+      required final bool loadingMore,
+      required final bool wasSearched}) = _$_HomeStateLoaded;
 
   List<Repository> get repositories;
   bool get loading;
   bool get loadingMore;
+  bool get wasSearched;
   @JsonKey(ignore: true)
   _$$_HomeStateLoadedCopyWith<_$_HomeStateLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -340,8 +360,8 @@ class _$_HomeStateError implements _HomeStateError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)
+    required TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
@@ -353,8 +373,8 @@ class _$_HomeStateError implements _HomeStateError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult? Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
@@ -366,8 +386,8 @@ class _$_HomeStateError implements _HomeStateError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
@@ -493,8 +513,8 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)
+    required TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
@@ -506,8 +526,8 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult? Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
@@ -519,8 +539,8 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
@@ -649,8 +669,8 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)
+    required TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)
         loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
@@ -662,8 +682,8 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult? Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
@@ -675,8 +695,8 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Repository> repositories, bool loading, bool loadingMore)?
+    TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
         loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,

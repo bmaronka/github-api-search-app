@@ -30,11 +30,12 @@ class HomeScreen extends HookWidget {
     useOnce(() => cubit.init(Provider.of<AppThemeModel>(context, listen: false).currentTheme));
 
     return state.maybeWhen(
-      loaded: (repositories, loading, loadingMore) => HomeScreenBody(
+      loaded: (repositories, loading, loadingMore, wasSearched) => HomeScreenBody(
         cubit: cubit,
         repositories: repositories,
         loading: loading,
         loadingMore: loadingMore,
+        wasSearched: wasSearched,
       ),
       error: (error) => ErrorPage(
         error,

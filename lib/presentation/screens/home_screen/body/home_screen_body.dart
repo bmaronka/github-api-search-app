@@ -14,6 +14,7 @@ class HomeScreenBody extends HookWidget {
     required this.repositories,
     required this.loading,
     required this.loadingMore,
+    required this.wasSearched,
     super.key,
   });
 
@@ -21,6 +22,7 @@ class HomeScreenBody extends HookWidget {
   final List<Repository> repositories;
   final bool loading;
   final bool loadingMore;
+  final bool wasSearched;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class HomeScreenBody extends HookWidget {
           children: [
             _buildSearchField(context, controller),
             _buildLoader(visible: loading),
-            _buildRepositoriesList(),
+            _buildRepositoriesList(context),
             _buildLoader(visible: loadingMore),
           ],
         ),
@@ -71,14 +73,27 @@ class HomeScreenBody extends HookWidget {
     cubit.resetSearch();
   }
 
-  Widget _buildRepositoriesList() => Expanded(
-        child: ListView.builder(
-          controller: cubit.scrollController,
-          shrinkWrap: true,
-          itemCount: repositories.length,
-          itemBuilder: (context, index) => RepositoryTile(repository: repositories[index]),
+  Widget _buildRepositoriesList(BuildContext context) {
+    late Widget child;
+
+    if (repositories.isEmpty && wasSearched) {
+      child = Center(
+        child: Text(
+          Strings.of(context).emptyRepositories,
+          textAlign: TextAlign.center,
         ),
       );
+    } else {
+      child = ListView.builder(
+        controller: cubit.scrollController,
+        shrinkWrap: true,
+        itemCount: repositories.length,
+        itemBuilder: (context, index) => RepositoryTile(repository: repositories[index]),
+      );
+    }
+
+    return Expanded(child: child);
+  }
 
   Widget _buildLoader({bool visible = false}) => Visibility(
         visible: visible,

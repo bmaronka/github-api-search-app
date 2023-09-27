@@ -7,6 +7,7 @@ class HomeState with _$HomeState {
     required List<Repository> repositories,
     required bool loading,
     required bool loadingMore,
+    required bool wasSearched,
   }) = _HomeStateLoaded;
 
   @Implements<HomeStateBuilder>()

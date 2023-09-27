@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Find your Github Repository"),
         "closed": MessageLookupByLibrary.simpleMessage("Closed"),
+        "emptyRepositories": MessageLookupByLibrary.simpleMessage(
+            "Unfortunately, there are no repositories. Please, try different phrase"),
         "hint": MessageLookupByLibrary.simpleMessage("Type repository name"),
         "issueNumber": m0,
         "issues": MessageLookupByLibrary.simpleMessage("Issues"),

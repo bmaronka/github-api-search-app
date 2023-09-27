@@ -23,6 +23,7 @@ class HomeCubit extends AppCubit<HomeState> {
             repositories: [],
             loading: false,
             loadingMore: false,
+            wasSearched: false,
           ),
         );
 
@@ -70,11 +71,11 @@ class HomeCubit extends AppCubit<HomeState> {
     _page = 1;
 
     if (_query.isEmpty) {
-      _emitLoaded();
+      _emitLoaded(wasSearched: false);
       return;
     }
 
-    _emitLoaded(loading: true);
+    _emitLoaded(loading: true, wasSearched: false);
     await _fetchRepositories();
   }
 
@@ -103,11 +104,17 @@ class HomeCubit extends AppCubit<HomeState> {
     _emitListenerState(HomeState.changeThemeMode(_themeType));
   }
 
-  void _emitLoaded({bool loading = false, bool loadingMore = false}) => emit(
+  void _emitLoaded({
+    bool loading = false,
+    bool loadingMore = false,
+    bool wasSearched = true,
+  }) =>
+      emit(
         HomeState.loaded(
           repositories: [..._repositories],
           loading: loading,
           loadingMore: loadingMore,
+          wasSearched: wasSearched,
         ),
       );
 

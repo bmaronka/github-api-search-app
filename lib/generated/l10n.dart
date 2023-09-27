@@ -199,6 +199,16 @@ class Strings {
       args: [],
     );
   }
+
+  /// `Unfortunately, there are no repositories. Please, try different phrase`
+  String get emptyRepositories {
+    return Intl.message(
+      'Unfortunately, there are no repositories. Please, try different phrase',
+      name: 'emptyRepositories',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
