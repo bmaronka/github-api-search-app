@@ -1,0 +1,18 @@
+{
+  "@@locale": "en",
+  "appTitle": "Find your Github Repository",
+  "offlineErrorTitle": "Oops! You're offline",
+  "unspecifiedErrorTitle": "Oops! We have a problem",
+  "reload": "Refresh",
+  "hint": "Type repository name",
+  "repositoryDetailsScreenTitle": "Repository details",
+  "repositoryName": "Repo name: {name}",
+  "repositoryAuthor": "Reoo author: {name}",
+  "repositoryDescription": "Repo description: {description}",
+  "issueNumber": "#{number}",
+  "seeMore": "See more\u2026",
+  "issues": "Issues",
+  "webviewScreenTitle": "Github",
+  "open": "Open",
+  "closed": "Closed"
+}
