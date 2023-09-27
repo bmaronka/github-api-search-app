@@ -201,10 +201,20 @@ class Strings {
   }
 
   /// `Unfortunately, there are no repositories. Please, try different phrase`
-  String get emptyRepositories {
+  String get emptyRepositoriesMessage {
     return Intl.message(
       'Unfortunately, there are no repositories. Please, try different phrase',
-      name: 'emptyRepositories',
+      name: 'emptyRepositoriesMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unfortunately, there are no issues`
+  String get emptyIssuesMessage {
+    return Intl.message(
+      'Unfortunately, there are no issues',
+      name: 'emptyIssuesMessage',
       desc: '',
       args: [],
     );

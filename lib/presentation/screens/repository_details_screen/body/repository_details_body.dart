@@ -34,14 +34,13 @@ class RepositoryDetailsBody extends StatelessWidget {
             children: [
               _buildRepositoryInfo(context),
               SizedBox(height: Dimens.m),
-              _buildDescription(context),
-              SizedBox(height: Dimens.m),
+              ..._buildDescription(context),
               Text(
                 Strings.of(context).issues,
                 style: TextStyle(fontSize: Dimens.ms),
               ),
               SizedBox(height: Dimens.s),
-              _buildIssuesList(),
+              _buildIssuesList(context),
               _buildLoader(),
             ],
           ),
@@ -79,26 +78,42 @@ class RepositoryDetailsBody extends StatelessWidget {
         ),
       );
 
-  Widget _buildDescription(BuildContext context) => repository.description?.isNotEmpty ?? false
-      ? Text(
-          Strings.of(context).repositoryDescription(repository.description!),
-          textAlign: TextAlign.justify,
-        )
-      : const SizedBox.shrink();
-
-  Widget _buildIssuesList() => Expanded(
-        child: GridView.builder(
-          controller: cubit.scrollController,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: Dimens.s,
-            mainAxisSpacing: Dimens.s,
+  List<Widget> _buildDescription(BuildContext context) => repository.description?.isNotEmpty ?? false
+      ? [
+          Text(
+            Strings.of(context).repositoryDescription(repository.description!),
+            textAlign: TextAlign.justify,
           ),
-          shrinkWrap: true,
-          itemCount: issues.length,
-          itemBuilder: (context, index) => IssueTile(issue: issues[index]),
+          SizedBox(height: Dimens.m),
+        ]
+      : [const SizedBox.shrink()];
+
+  Widget _buildIssuesList(BuildContext context) {
+    late Widget child;
+
+    if (issues.isEmpty) {
+      child = Center(
+        child: Text(
+          Strings.of(context).emptyIssuesMessage,
+          textAlign: TextAlign.center,
         ),
       );
+    } else {
+      child = GridView.builder(
+        controller: cubit.scrollController,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: Dimens.s,
+          mainAxisSpacing: Dimens.s,
+        ),
+        shrinkWrap: true,
+        itemCount: issues.length,
+        itemBuilder: (context, index) => IssueTile(issue: issues[index]),
+      );
+    }
+
+    return Expanded(child: child);
+  }
 
   Widget _buildLoader() => Visibility(
         visible: loadingMore,

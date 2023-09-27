@@ -38,6 +38,7 @@ class HomeScreenBody extends HookWidget {
         child: Column(
           children: [
             _buildSearchField(context, controller),
+            SizedBox(height: Dimens.s),
             _buildLoader(visible: loading),
             _buildRepositoriesList(context),
             _buildLoader(visible: loadingMore),
@@ -79,7 +80,7 @@ class HomeScreenBody extends HookWidget {
     if (repositories.isEmpty && wasSearched) {
       child = Center(
         child: Text(
-          Strings.of(context).emptyRepositories,
+          Strings.of(context).emptyRepositoriesMessage,
           textAlign: TextAlign.center,
         ),
       );

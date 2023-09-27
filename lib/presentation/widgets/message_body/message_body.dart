@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:github_search_app/generated/l10n.dart';
-import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 import 'package:github_search_app/style/dimens.dart';
 
 class MessageBody extends StatelessWidget {
@@ -60,37 +59,35 @@ class MessageBody extends StatelessWidget {
       );
 
   @override
-  Widget build(BuildContext context) => AppScaffold(
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(Dimens.m),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: Dimens.m),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    if (confirmButtonTitle?.isNotEmpty ?? false)
-                      ElevatedButton(
-                        onPressed: onConfirm,
-                        child: Text(confirmButtonTitle!),
-                      ),
-                    if (cancelButtonTitle?.isNotEmpty ?? false) ...[
-                      SizedBox(width: Dimens.m),
-                      ElevatedButton(
-                        onPressed: onCancel,
-                        child: Text(cancelButtonTitle!),
-                      ),
-                    ],
+  Widget build(BuildContext context) => SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(Dimens.m),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: Dimens.m),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (confirmButtonTitle?.isNotEmpty ?? false)
+                    ElevatedButton(
+                      onPressed: onConfirm,
+                      child: Text(confirmButtonTitle!),
+                    ),
+                  if (cancelButtonTitle?.isNotEmpty ?? false) ...[
+                    SizedBox(width: Dimens.m),
+                    ElevatedButton(
+                      onPressed: onCancel,
+                      child: Text(cancelButtonTitle!),
+                    ),
                   ],
-                ),
-              ],
-            ),
+                ],
+              ),
+            ],
           ),
         ),
       );
