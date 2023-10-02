@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:github_search_app/data/model/offline_error.dart';
-import 'package:github_search_app/domain/repositories/model/owner.dart';
+import 'package:github_search_app/domain/model/shared/owner.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repositories_use_case.dart';
 import 'package:github_search_app/presentation/screens/home_screen/cubit/home_cubit.dart';

@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:github_search_app/domain/repositories/model/owner.dart';
+import 'package:github_search_app/domain/model/shared/owner.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/repositories/service/repositories_service.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repositories_use_case.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'get_repo_issues_use_case_test.mocks.dart';
+import 'get_repositories_use_case_test.mocks.dart';
 
 @GenerateMocks([
   RepositoriesService,
