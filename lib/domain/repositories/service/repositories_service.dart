@@ -5,11 +5,13 @@ abstract class RepositoriesService {
   Future<List<Repository>> getRepositories(
     String query, {
     required int page,
+    bool tryCache = true,
   });
 
   Future<List<Issue>> getRepoIssues(
     String owner,
     String repo, {
     required int page,
+    bool tryCache = true,
   });
 }

@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repositories_use_case.dart';
 import 'package:github_search_app/style/themes.dart';
+import 'package:github_search_app/utils/or_else_handlers.dart';
 import 'package:github_search_app/utils/safety_cubit.dart';
 import 'package:injectable/injectable.dart';
 
@@ -46,13 +47,16 @@ class HomeCubit extends AppCubit<HomeState> {
 
   void _removeLoadMoreListener() => scrollController.removeListener(_loadMore);
 
-  Future<void> _loadMore() async {
-    if (_isScrolledToBottom) {
-      _page++;
-      _emitLoaded(loadingMore: true);
-      await _fetchRepositories();
-    }
-  }
+  void _loadMore() => state.whenOrNull(
+        loaded: (repositories, loading, loadingMore, wasSearched) {
+          if (_isScrolledToBottom && !loadingMore) {
+            _page++;
+            _emitLoaded(loadingMore: true);
+            _fetchRepositories();
+          }
+          return doNothing();
+        },
+      );
 
   void searchRepositories(String? query) {
     EasyDebounce.cancel(_searchTaskName);
