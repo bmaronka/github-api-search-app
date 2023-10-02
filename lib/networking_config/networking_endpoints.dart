@@ -1,4 +1,7 @@
 class NetworkingEndpoints {
+  //Repositories
   static const searchRepositories = '/search/repositories';
-  static const repoIssues = '/repos/{owner}/{repo}/issues';
+
+  //Issues
+  static const issues = '/repos/{owner}/{repo}/issues';
 }

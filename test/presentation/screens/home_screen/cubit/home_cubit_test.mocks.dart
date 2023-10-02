@@ -35,12 +35,16 @@ class MockGetRepositoriesUseCase extends _i1.Mock
   _i3.Future<List<_i4.Repository>> call(
     String? query, {
     required int? page,
+    bool? tryCache = true,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
           #call,
           [query],
-          {#page: page},
+          {
+            #page: page,
+            #tryCache: tryCache,
+          },
         ),
         returnValue: _i3.Future<List<_i4.Repository>>.value(<_i4.Repository>[]),
       ) as _i3.Future<List<_i4.Repository>>);

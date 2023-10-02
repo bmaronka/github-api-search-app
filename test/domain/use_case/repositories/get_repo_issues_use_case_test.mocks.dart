@@ -5,7 +5,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:github_search_app/domain/repositories/model/issue.dart' as _i5;
 import 'package:github_search_app/domain/repositories/model/repository.dart'
     as _i4;
 import 'package:github_search_app/domain/repositories/service/repositories_service.dart'
@@ -36,30 +35,17 @@ class MockRepositoriesService extends _i1.Mock
   _i3.Future<List<_i4.Repository>> getRepositories(
     String? query, {
     required int? page,
+    bool? tryCache = true,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
           #getRepositories,
           [query],
-          {#page: page},
+          {
+            #page: page,
+            #tryCache: tryCache,
+          },
         ),
         returnValue: _i3.Future<List<_i4.Repository>>.value(<_i4.Repository>[]),
       ) as _i3.Future<List<_i4.Repository>>);
-  @override
-  _i3.Future<List<_i5.Issue>> getRepoIssues(
-    String? owner,
-    String? repo, {
-    required int? page,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getRepoIssues,
-          [
-            owner,
-            repo,
-          ],
-          {#page: page},
-        ),
-        returnValue: _i3.Future<List<_i5.Issue>>.value(<_i5.Issue>[]),
-      ) as _i3.Future<List<_i5.Issue>>);
 }

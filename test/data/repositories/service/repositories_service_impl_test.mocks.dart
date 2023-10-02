@@ -7,8 +7,6 @@ import 'dart:async' as _i4;
 
 import 'package:github_search_app/data/repositories/data_source/repositories_data_source.dart'
     as _i3;
-import 'package:github_search_app/data/repositories/model/issue_dto.dart'
-    as _i5;
 import 'package:github_search_app/data/repositories/model/repositories_list_dto.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
@@ -75,23 +73,4 @@ class MockRepositoriesDataSource extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.RepositoriesListDto>);
-  @override
-  _i4.Future<List<_i5.IssueDto>> getRepoIssues(
-    String? owner,
-    String? repo,
-    String? page,
-    String? state,
-  ) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getRepoIssues,
-          [
-            owner,
-            repo,
-            page,
-            state,
-          ],
-        ),
-        returnValue: _i4.Future<List<_i5.IssueDto>>.value(<_i5.IssueDto>[]),
-      ) as _i4.Future<List<_i5.IssueDto>>);
 }

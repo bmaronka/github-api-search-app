@@ -1,4 +1,4 @@
-import 'package:github_search_app/data/repositories/model/owner_dto.dart';
+import 'package:github_search_app/data/model/shared/owner_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'issue_dto.g.dart';

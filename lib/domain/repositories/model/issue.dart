@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:github_search_app/data/repositories/model/issue_dto.dart';
-import 'package:github_search_app/domain/repositories/model/owner.dart';
+import 'package:github_search_app/data/issues/model/issue_dto.dart';
+import 'package:github_search_app/domain/model/shared/owner.dart';
 import 'package:github_search_app/extensions/build_context_extension.dart';
 import 'package:github_search_app/generated/l10n.dart';
 

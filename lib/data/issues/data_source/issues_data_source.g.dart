@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'repositories_data_source.dart';
+part of 'issues_data_source.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'repositories_data_source.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _RepositoriesDataSource implements RepositoriesDataSource {
-  _RepositoriesDataSource(
+class _IssuesDataSource implements IssuesDataSource {
+  _IssuesDataSource(
     this._dio, {
     this.baseUrl,
   });
@@ -19,30 +19,28 @@ class _RepositoriesDataSource implements RepositoriesDataSource {
   String? baseUrl;
 
   @override
-  Future<RepositoriesListDto> getRepositories(
-    String query,
+  Future<List<IssueDto>> getIssues(
+    String owner,
+    String repo,
     String page,
-    String sort,
-    String order,
+    String state,
   ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'q': query,
       r'page': page,
-      r'sort': sort,
-      r'order': order,
+      r'state': state,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<RepositoriesListDto>(Options(
+    final _result =
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<IssueDto>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/search/repositories',
+              '/repos/${owner}/${repo}/issues',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -51,7 +49,9 @@ class _RepositoriesDataSource implements RepositoriesDataSource {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = RepositoriesListDto.fromJson(_result.data!);
+    var value = _result.data!
+        .map((dynamic i) => IssueDto.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

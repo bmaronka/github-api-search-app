@@ -35,6 +35,7 @@ class MockGetRepoIssuesUseCase extends _i1.Mock
     String? owner,
     String? repo, {
     required int? page,
+    bool? tryCache = true,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -43,7 +44,10 @@ class MockGetRepoIssuesUseCase extends _i1.Mock
             owner,
             repo,
           ],
-          {#page: page},
+          {
+            #page: page,
+            #tryCache: tryCache,
+          },
         ),
         returnValue: _i3.Future<List<_i4.Issue>>.value(<_i4.Issue>[]),
       ) as _i3.Future<List<_i4.Issue>>);

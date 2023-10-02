@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:github_search_app/data/repositories/model/repository_dto.dart';
-import 'package:github_search_app/domain/repositories/model/owner.dart';
+import 'package:github_search_app/domain/model/shared/owner.dart';
 
 part 'repository.freezed.dart';
 
