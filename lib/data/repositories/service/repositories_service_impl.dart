@@ -16,6 +16,7 @@ class RepositoriesServiceImpl implements RepositoriesService {
   RepositoriesServiceImpl(this._repositoriesDataSource);
 
   ({String query, int page, List<Repository> repositories})? _reposCache;
+  ({String owner, String repo, int page, List<Issue> issues})? _issuesCache;
 
   @override
   Future<List<Repository>> getRepositories(
@@ -23,6 +24,8 @@ class RepositoriesServiceImpl implements RepositoriesService {
     required int page,
     bool tryCache = true,
   }) async {
+    _clearReposCache(query);
+
     if (_canUseReposCache(query, page: page, tryCache: tryCache)) {
       return _cutResponse<Repository>(_reposCache!.repositories, page);
     }
@@ -43,6 +46,12 @@ class RepositoriesServiceImpl implements RepositoriesService {
     return _cutResponse<Repository>(_reposCache!.repositories, page);
   }
 
+  void _clearReposCache(String query) {
+    if (query != _reposCache?.query) {
+      _reposCache = null;
+    }
+  }
+
   bool _canUseReposCache(
     String query, {
     required int page,
@@ -57,15 +66,46 @@ class RepositoriesServiceImpl implements RepositoriesService {
     required int page,
     bool tryCache = true,
   }) async {
+    _clearIssuesCache(owner, repo);
+
+    if (_canUseIssuesCache(owner, repo, page: page, tryCache: tryCache)) {
+      return _cutResponse<Issue>(_issuesCache!.issues, page);
+    }
+
     final issueDtosList = await _repositoriesDataSource.getRepoIssues(
       owner,
       repo,
       page.toString(),
       _issuesState,
     );
+    final issues = issueDtosList.map(Issue.fromIssueDto).toList(growable: false);
+    _issuesCache = (
+      owner: owner,
+      repo: repo,
+      page: page,
+      issues: [...?_issuesCache?.issues, ...issues],
+    );
 
-    return issueDtosList.map(Issue.fromIssueDto).toList(growable: false);
+    return _cutResponse<Issue>(_issuesCache!.issues, page);
   }
+
+  void _clearIssuesCache(String owner, String repo) {
+    if (owner != _issuesCache?.owner || repo != _issuesCache?.repo) {
+      _issuesCache = null;
+    }
+  }
+
+  bool _canUseIssuesCache(
+    String owner,
+    String repo, {
+    required int page,
+    required bool tryCache,
+  }) =>
+      tryCache &&
+      _issuesCache != null &&
+      owner == _issuesCache!.owner &&
+      repo == _issuesCache!.repo &&
+      page <= _issuesCache!.page;
 
   List<T> _cutResponse<T>(List<T> response, int page) => response.sublist((page - 1) * _cutFactor, page * _cutFactor);
 }

@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:github_search_app/domain/repositories/model/issue.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repo_issues_use_case.dart';
+import 'package:github_search_app/utils/or_else_handlers.dart';
 import 'package:github_search_app/utils/safety_cubit.dart';
 import 'package:injectable/injectable.dart';
 
@@ -35,13 +36,16 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
 
   void _removeLoadMoreListener() => scrollController.removeListener(_loadMore);
 
-  Future<void> _loadMore() async {
-    if (_isScrolledToBottom) {
-      _page++;
-      _emitLoaded(loadingMore: true);
-      await _fetchRepoIssues();
-    }
-  }
+  void _loadMore() => state.whenOrNull(
+        loaded: (issues, loadingMore) {
+          if (_isScrolledToBottom && !loadingMore) {
+            _page++;
+            _emitLoaded(loadingMore: true);
+            _fetchRepoIssues();
+          }
+          return doNothing();
+        },
+      );
 
   Future<void> refresh() async {
     emit(const RepositoryDetailsState.loading());

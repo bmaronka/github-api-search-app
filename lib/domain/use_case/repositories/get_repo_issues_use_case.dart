@@ -12,6 +12,7 @@ class GetRepoIssuesUseCase {
     String owner,
     String repo, {
     required int page,
+    bool tryCache = true,
   }) =>
-      _repositoriesService.getRepoIssues(owner, repo, page: page);
+      _repositoriesService.getRepoIssues(owner, repo, page: page, tryCache: tryCache);
 }

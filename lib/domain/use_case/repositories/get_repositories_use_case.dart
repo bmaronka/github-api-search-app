@@ -11,6 +11,7 @@ class GetRepositoriesUseCase {
   Future<List<Repository>> call(
     String query, {
     required int page,
+    bool tryCache = true,
   }) =>
-      _repositoriesService.getRepositories(query, page: page);
+      _repositoriesService.getRepositories(query, page: page, tryCache: tryCache);
 }
