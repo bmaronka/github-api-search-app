@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/style/dimens.dart';
 
-class StarsBadge extends StatelessWidget with ExtensionMixin {
+class StarsBadge extends StatelessWidget {
   const StarsBadge({
     required this.starsCount,
     super.key,

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/presentation/routing/router.gr.dart';
 import 'package:github_search_app/presentation/screens/repository_details_screen/widgets/status_badge.dart';

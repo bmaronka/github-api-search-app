@@ -4,7 +4,7 @@ import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/style/dimens.dart';
 
-class AppSnackBar extends StatelessWidget with ExtensionMixin {
+class AppSnackBar extends StatelessWidget {
   final Color color;
   final String title;
 

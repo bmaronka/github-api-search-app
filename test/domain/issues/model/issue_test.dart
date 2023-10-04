@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:github_search_app/data/issues/model/issue_dto.dart';
 import 'package:github_search_app/data/model/shared/owner_dto.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/model/shared/owner.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
 
 void main() {
   group(

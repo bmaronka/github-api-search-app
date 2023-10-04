@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/issues/service/issues_service.dart';
 import 'package:github_search_app/domain/model/shared/owner.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repo_issues_use_case.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

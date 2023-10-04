@@ -1,7 +1,7 @@
 import 'package:fimber_io/fimber_io.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/use_case/repositories/get_repo_issues_use_case.dart';
 import 'package:github_search_app/utils/or_else_handlers.dart';

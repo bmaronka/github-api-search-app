@@ -4,7 +4,7 @@ import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/style/dimens.dart';
 import 'package:octo_image/octo_image.dart';
 
-class AppAvatar extends StatelessWidget with ExtensionMixin {
+class AppAvatar extends StatelessWidget {
   const AppAvatar({
     required this.url,
     required this.placeholder,

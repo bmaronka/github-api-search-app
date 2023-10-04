@@ -1,4 +1,4 @@
-import 'package:github_search_app/domain/repositories/model/issue.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 
 abstract class IssuesService {
   Future<List<Issue>> getIssues(

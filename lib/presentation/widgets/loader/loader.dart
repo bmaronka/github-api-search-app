@@ -3,7 +3,7 @@ import 'package:github_search_app/extensions/extension_mixin.dart';
 
 const _defaultLoaderRadius = 10.0;
 
-class AppLoader extends StatelessWidget with ExtensionMixin {
+class AppLoader extends StatelessWidget {
   final Color? color;
   final double? radius;
 

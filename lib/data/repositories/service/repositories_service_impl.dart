@@ -1,7 +1,6 @@
 import 'package:github_search_app/data/repositories/data_source/repositories_data_source.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/domain/repositories/service/repositories_service.dart';
-import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/extensions/list_extension.dart';
 import 'package:injectable/injectable.dart';
 
@@ -9,7 +8,7 @@ const _sort = 'stars';
 const _order = 'desc';
 
 @LazySingleton(as: RepositoriesService)
-class RepositoriesServiceImpl with ExtensionMixin implements RepositoriesService {
+class RepositoriesServiceImpl implements RepositoriesService {
   final RepositoriesDataSource _repositoriesDataSource;
 
   RepositoriesServiceImpl(this._repositoriesDataSource);

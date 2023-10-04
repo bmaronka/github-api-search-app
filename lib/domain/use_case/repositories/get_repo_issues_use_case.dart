@@ -1,5 +1,5 @@
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/issues/service/issues_service.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

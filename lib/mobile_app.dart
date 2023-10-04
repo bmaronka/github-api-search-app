@@ -15,7 +15,7 @@ const _tabletSize = Size(750, 1334);
 const _mobileSize = Size(375, 667);
 const englishLanguageCode = 'en';
 
-class App extends StatelessWidget with ExtensionMixin {
+class App extends StatelessWidget {
   final RootStackRouter _router;
 
   const App(

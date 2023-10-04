@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/style/dimens.dart';
 
-class StatusBadge extends StatelessWidget with ExtensionMixin {
+class StatusBadge extends StatelessWidget {
   const StatusBadge({
     required this.status,
     super.key,

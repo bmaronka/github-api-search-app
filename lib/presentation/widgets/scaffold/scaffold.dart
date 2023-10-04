@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github_search_app/extensions/extension_mixin.dart';
 
-class AppScaffold extends StatelessWidget with ExtensionMixin {
+class AppScaffold extends StatelessWidget {
   const AppScaffold({
     required this.body,
     this.title = '',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
 import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/presentation/screens/repository_details_screen/cubit/repository_details_cubit.dart';

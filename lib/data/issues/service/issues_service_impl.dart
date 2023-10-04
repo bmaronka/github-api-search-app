@@ -1,14 +1,13 @@
 import 'package:github_search_app/data/issues/data_source/issues_data_source.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/issues/service/issues_service.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
-import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/extensions/list_extension.dart';
 import 'package:injectable/injectable.dart';
 
 const _issuesState = 'all';
 
 @LazySingleton(as: IssuesService)
-class IssuesServiceImpl with ExtensionMixin implements IssuesService {
+class IssuesServiceImpl implements IssuesService {
   final IssuesDataSource _issuesDataSource;
 
   IssuesServiceImpl(this._issuesDataSource);

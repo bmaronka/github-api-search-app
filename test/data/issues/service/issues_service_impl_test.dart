@@ -3,8 +3,8 @@ import 'package:github_search_app/data/issues/data_source/issues_data_source.dar
 import 'package:github_search_app/data/issues/model/issue_dto.dart';
 import 'package:github_search_app/data/issues/service/issues_service_impl.dart';
 import 'package:github_search_app/data/model/shared/owner_dto.dart';
+import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/model/shared/owner.dart';
-import 'package:github_search_app/domain/repositories/model/issue.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
