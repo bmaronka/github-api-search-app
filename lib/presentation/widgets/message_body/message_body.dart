@@ -6,15 +6,11 @@ class MessageBody extends StatelessWidget {
   final String title;
   final String? confirmButtonTitle;
   final VoidCallback? onConfirm;
-  final String? cancelButtonTitle;
-  final VoidCallback? onCancel;
 
   const MessageBody._({
     required this.title,
     this.confirmButtonTitle,
     this.onConfirm,
-    this.cancelButtonTitle,
-    this.onCancel,
   });
 
   factory MessageBody.error({
@@ -26,36 +22,6 @@ class MessageBody extends StatelessWidget {
         title: title ?? Strings.current.unspecifiedErrorTitle,
         confirmButtonTitle: confirmButtonTitle ?? Strings.current.reload,
         onConfirm: onConfirm,
-      );
-
-  factory MessageBody.errorNoAction({String? title}) => MessageBody._(
-        title: title ?? Strings.current.unspecifiedErrorTitle,
-      );
-
-  factory MessageBody.oneAction({
-    required String title,
-    required String confirmButtonTitle,
-    required Function() onConfirm,
-  }) =>
-      MessageBody._(
-        title: title,
-        confirmButtonTitle: confirmButtonTitle,
-        onConfirm: onConfirm,
-      );
-
-  factory MessageBody.twoActions({
-    required String title,
-    required String confirmButtonTitle,
-    required Function() onConfirm,
-    required String cancelButtonTitle,
-    required Function() onCancel,
-  }) =>
-      MessageBody._(
-        title: title,
-        confirmButtonTitle: confirmButtonTitle,
-        onConfirm: onConfirm,
-        cancelButtonTitle: cancelButtonTitle,
-        onCancel: onCancel,
       );
 
   @override
@@ -78,13 +44,6 @@ class MessageBody extends StatelessWidget {
                       onPressed: onConfirm,
                       child: Text(confirmButtonTitle!),
                     ),
-                  if (cancelButtonTitle?.isNotEmpty ?? false) ...[
-                    SizedBox(width: Dimens.m),
-                    ElevatedButton(
-                      onPressed: onCancel,
-                      child: Text(cancelButtonTitle!),
-                    ),
-                  ],
                 ],
               ),
             ],

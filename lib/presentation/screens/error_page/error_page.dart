@@ -6,7 +6,6 @@ import 'package:github_search_app/presentation/routing/router.gr.dart';
 import 'package:github_search_app/presentation/widgets/message_body/message_body.dart';
 import 'package:github_search_app/presentation/widgets/scaffold/scaffold.dart';
 
-@RoutePage()
 class ErrorPage extends StatelessWidget {
   final String? title;
   final Object error;
