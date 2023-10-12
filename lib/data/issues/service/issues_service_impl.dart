@@ -1,7 +1,7 @@
 import 'package:github_search_app/data/issues/data_source/issues_data_source.dart';
 import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/issues/service/issues_service.dart';
-import 'package:github_search_app/extensions/list_extension.dart';
+import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:injectable/injectable.dart';
 
 const _issuesState = 'all';

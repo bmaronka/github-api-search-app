@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a pl locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,40 +18,41 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'pl';
 
   static String m0(number) => "#${number}";
 
-  static String m1(name) => "Reoo author: ${name}";
+  static String m1(name) => "Autor repo: ${name}";
 
-  static String m2(description) => "Repo description: ${description}";
+  static String m2(description) => "Opis repo: ${description}";
 
-  static String m3(name) => "Repo name: ${name}";
+  static String m3(name) => "Nazwa repo: ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle":
-            MessageLookupByLibrary.simpleMessage("Find Github Repository"),
-        "closed": MessageLookupByLibrary.simpleMessage("Closed"),
+            MessageLookupByLibrary.simpleMessage("Znandź repozytorium Github"),
+        "closed": MessageLookupByLibrary.simpleMessage("Zamknij"),
         "emptyIssuesMessage": MessageLookupByLibrary.simpleMessage(
-            "Unfortunately, there are no issues"),
+            "Niestety nie ma tu żadnych problemów"),
         "emptyRepositoriesMessage": MessageLookupByLibrary.simpleMessage(
-            "Unfortunately, there are no repositories. Please, try different phrase"),
-        "hint": MessageLookupByLibrary.simpleMessage("Type repository name"),
+            "Niestety nie ma tu żadnych repozytoriów. Spróbuj inną frazę"),
+        "hint":
+            MessageLookupByLibrary.simpleMessage("Wpisz nazwę repozytoirum "),
         "issueNumber": m0,
-        "issues": MessageLookupByLibrary.simpleMessage("Issues"),
+        "issues": MessageLookupByLibrary.simpleMessage("Problemy"),
         "offlineErrorTitle":
-            MessageLookupByLibrary.simpleMessage("Oops! You\'re offline"),
-        "open": MessageLookupByLibrary.simpleMessage("Open"),
-        "reload": MessageLookupByLibrary.simpleMessage("Refresh"),
+            MessageLookupByLibrary.simpleMessage("Ups! Jesteś offline"),
+        "open": MessageLookupByLibrary.simpleMessage("Otwórz"),
+        "reload": MessageLookupByLibrary.simpleMessage("Odśwież"),
         "repositoryAuthor": m1,
         "repositoryDescription": m2,
         "repositoryDetailsScreenTitle":
-            MessageLookupByLibrary.simpleMessage("Repository details"),
+            MessageLookupByLibrary.simpleMessage("Szczegóły repozytoirum"),
         "repositoryName": m3,
-        "seeMore": MessageLookupByLibrary.simpleMessage("See more…"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("Zobacz więcej…"),
         "unspecifiedErrorTitle":
-            MessageLookupByLibrary.simpleMessage("Oops! We have a problem"),
+            MessageLookupByLibrary.simpleMessage("Ups! Mamy problem"),
         "webviewScreenTitle": MessageLookupByLibrary.simpleMessage("Github")
       };
 }

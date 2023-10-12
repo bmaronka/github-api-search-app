@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Find your Github Repository",
+  "appTitle": "Find Github Repository",
   "offlineErrorTitle": "Oops! You're offline",
   "unspecifiedErrorTitle": "Oops! We have a problem",
   "reload": "Refresh",

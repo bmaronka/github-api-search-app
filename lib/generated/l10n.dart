@@ -50,10 +50,10 @@ class Strings {
     return Localizations.of<Strings>(context, Strings);
   }
 
-  /// `Find your Github Repository`
+  /// `Find Github Repository`
   String get appTitle {
     return Intl.message(
-      'Find your Github Repository',
+      'Find Github Repository',
       name: 'appTitle',
       desc: '',
       args: [],
@@ -227,6 +227,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'pl'),
     ];
   }
 

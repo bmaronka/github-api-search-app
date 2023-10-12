@@ -1,0 +1,20 @@
+{
+  "@@locale": "pl",
+  "appTitle": "Znandź repozytorium Github",
+  "offlineErrorTitle": "Ups! Jesteś offline",
+  "unspecifiedErrorTitle": "Ups! Mamy problem",
+  "reload": "Odśwież",
+  "hint": "Wpisz nazwę repozytoirum ",
+  "repositoryDetailsScreenTitle": "Szczegóły repozytoirum",
+  "repositoryName": "Nazwa repo: {name}",
+  "repositoryAuthor": "Autor repo: {name}",
+  "repositoryDescription": "Opis repo: {description}",
+  "issueNumber": "#{number}",
+  "seeMore": "Zobacz więcej\u2026",
+  "issues": "Problemy",
+  "webviewScreenTitle": "Github",
+  "open": "Otwórz",
+  "closed": "Zamknij",
+  "emptyRepositoriesMessage": "Niestety nie ma tu żadnych repozytoriów. Spróbuj inną frazę",
+  "emptyIssuesMessage":"Niestety nie ma tu żadnych problemów"
+}

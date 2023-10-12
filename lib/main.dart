@@ -1,6 +1,7 @@
 import 'package:fimber_io/fimber_io.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:github_search_app/domain/db_client/database_client_initializer.dart';
 import 'package:github_search_app/injectable/injectable.dart';
 import 'package:github_search_app/mobile_app.dart';
 import 'package:github_search_app/presentation/routing/router.dart';
@@ -21,6 +22,7 @@ Future<void> initializeApp() async {
   Fimber.plantTree(DebugTree());
 
   configureDependencies();
+  await DatabaseClientInitializer.create();
 
   Bloc.observer = LoggingBlocObserver();
 }
