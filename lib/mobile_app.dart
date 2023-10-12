@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:github_search_app/extensions/extension_mixin.dart';
 import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/injectable/injectable.dart';
+import 'package:github_search_app/style/locales.dart';
 import 'package:github_search_app/style/themes.dart';
 import 'package:github_search_app/utils/hide_keyboard.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
@@ -13,7 +14,6 @@ import 'package:provider/provider.dart';
 
 const _tabletSize = Size(750, 1334);
 const _mobileSize = Size(375, 667);
-const englishLanguageCode = 'en';
 
 class App extends StatelessWidget {
   final RootStackRouter _router;
@@ -35,9 +35,10 @@ class App extends StatelessWidget {
             builder: (_, __) => MultiProvider(
               providers: [
                 ListenableProvider(create: (_) => AppThemeModel()),
+                ListenableProvider(create: (_) => LocaleModel()),
               ],
-              child: Consumer(
-                builder: (context, AppThemeModel model, child) => ColoredBox(
+              child: Consumer2(
+                builder: (context, AppThemeModel themeModel, LocaleModel localeModel, child) => ColoredBox(
                   color: context.getColors().white,
                   child: MaterialApp.router(
                     builder: (_, child) => child ?? const SizedBox.shrink(),
@@ -48,7 +49,7 @@ class App extends StatelessWidget {
                       ],
                     ),
                     theme: ThemeData(
-                      extensions: model.currentExtensions,
+                      extensions: themeModel.currentExtensions,
                       colorScheme: ColorScheme.light(primary: context.getColors().primary),
                     ),
                     localizationsDelegates: const [
@@ -57,7 +58,7 @@ class App extends StatelessWidget {
                       GlobalWidgetsLocalizations.delegate,
                       GlobalCupertinoLocalizations.delegate,
                     ],
-                    locale: const Locale(englishLanguageCode),
+                    locale: Locale(localeModel.currentLocale.languageCode),
                     supportedLocales: Strings.delegate.supportedLocales,
                   ),
                 ),
