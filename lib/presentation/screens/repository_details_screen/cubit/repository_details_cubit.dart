@@ -41,7 +41,7 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
           if (_isScrolledToBottom && !loadingMore) {
             _page++;
             _emitLoaded(loadingMore: true);
-            _fetchRepoIssues();
+            _fetchRepoIssues(hasPreviousIssues: issues.isNotEmpty);
           }
           return doNothing();
         },
@@ -52,7 +52,7 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
     await _fetchRepoIssues();
   }
 
-  Future<void> _fetchRepoIssues() async {
+  Future<void> _fetchRepoIssues({bool hasPreviousIssues = false}) async {
     try {
       final issues = await _getRepoIssuesUseCase(
         _repository.owner.name,
@@ -60,6 +60,11 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
         page: _page,
       );
       _issues.addAll(issues);
+
+      if (hasPreviousIssues && issues.isEmpty) {
+        _emitListenerState(const RepositoryDetailsState.showNoMoreIssuesSnackBar());
+      }
+
       _emitLoaded();
     } catch (error, stacktrace) {
       Fimber.e(

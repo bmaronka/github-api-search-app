@@ -52,7 +52,7 @@ class HomeCubit extends AppCubit<HomeState> {
           if (_isScrolledToBottom && !loadingMore) {
             _page++;
             _emitLoaded(loadingMore: true);
-            _fetchRepositories();
+            _fetchRepositories(hasPreviousRepos: repositories.isNotEmpty);
           }
           return doNothing();
         },
@@ -83,13 +83,18 @@ class HomeCubit extends AppCubit<HomeState> {
     await _fetchRepositories();
   }
 
-  Future<void> _fetchRepositories() async {
+  Future<void> _fetchRepositories({bool hasPreviousRepos = false}) async {
     try {
       final repositories = await _getRepositoriesUseCase(
         _query,
         page: _page,
       );
       _repositories.addAll(repositories);
+
+      if (hasPreviousRepos && repositories.isEmpty) {
+        _emitListenerState(const HomeState.showNoMoreRepositoriesSnackBar());
+      }
+
       _emitLoaded();
     } catch (error, stacktrace) {
       Fimber.e(

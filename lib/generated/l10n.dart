@@ -219,6 +219,26 @@ class Strings {
       args: [],
     );
   }
+
+  /// `No more repositories`
+  String get noMoreRepositories {
+    return Intl.message(
+      'No more repositories',
+      name: 'noMoreRepositories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No more issues`
+  String get noMoreIssues {
+    return Intl.message(
+      'No more issues',
+      name: 'noMoreIssues',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<Strings> {

@@ -16,6 +16,9 @@ class RepositoryDetailsState with _$RepositoryDetailsState {
 
   @Implements<RepositoryDetailsStateListener>()
   const factory RepositoryDetailsState.showErrorSnackBar(Object error) = _RepositoryDetailsStateShowErrorSnackBar;
+
+  @Implements<RepositoryDetailsStateListener>()
+  const factory RepositoryDetailsState.showNoMoreIssuesSnackBar() = _RepositoryDetailsStateShowNoMoreIssuesSnackBar;
 }
 
 abstract class RepositoryDetailsStateBuilder {}

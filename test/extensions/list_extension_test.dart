@@ -71,6 +71,15 @@ void main() {
           expect(cutList, List.generate(25, (index) => index));
         },
       );
+
+      test(
+        'test when page is 3',
+        () {
+          final cutList = list.cutResponse(3);
+
+          expect(cutList, []);
+        },
+      );
     },
   );
 }

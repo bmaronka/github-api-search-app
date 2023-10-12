@@ -18,6 +18,9 @@ class HomeState with _$HomeState {
 
   @Implements<HomeStateListener>()
   const factory HomeState.changeThemeMode(ThemeType theme) = _HomeStateChangeThemeMode;
+
+  @Implements<HomeStateListener>()
+  const factory HomeState.showNoMoreRepositoriesSnackBar() = _HomeStateShowNoMoreRepositoriesSnackBar;
 }
 
 abstract class HomeStateBuilder {}

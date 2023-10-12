@@ -22,6 +22,7 @@ mixin _$RepositoryDetailsState {
     required TResult Function(List<Issue> issues, bool loadingMore) loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function() showNoMoreIssuesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$RepositoryDetailsState {
     TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function()? showNoMoreIssuesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$RepositoryDetailsState {
     TResult Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function()? showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,9 @@ mixin _$RepositoryDetailsState {
     required TResult Function(_RepositoryDetailsStateError value) error,
     required TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(
+            _RepositoryDetailsStateShowNoMoreIssuesSnackBar value)
+        showNoMoreIssuesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +63,8 @@ mixin _$RepositoryDetailsState {
     TResult? Function(_RepositoryDetailsStateError value)? error,
     TResult? Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult? Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +74,8 @@ mixin _$RepositoryDetailsState {
     TResult Function(_RepositoryDetailsStateError value)? error,
     TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +147,7 @@ class _$_RepositoryDetailsStateLoading
     required TResult Function(List<Issue> issues, bool loadingMore) loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function() showNoMoreIssuesSnackBar,
   }) {
     return loading();
   }
@@ -148,6 +159,7 @@ class _$_RepositoryDetailsStateLoading
     TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function()? showNoMoreIssuesSnackBar,
   }) {
     return loading?.call();
   }
@@ -159,6 +171,7 @@ class _$_RepositoryDetailsStateLoading
     TResult Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function()? showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -175,6 +188,9 @@ class _$_RepositoryDetailsStateLoading
     required TResult Function(_RepositoryDetailsStateError value) error,
     required TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(
+            _RepositoryDetailsStateShowNoMoreIssuesSnackBar value)
+        showNoMoreIssuesSnackBar,
   }) {
     return loading(this);
   }
@@ -187,6 +203,8 @@ class _$_RepositoryDetailsStateLoading
     TResult? Function(_RepositoryDetailsStateError value)? error,
     TResult? Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult? Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
   }) {
     return loading?.call(this);
   }
@@ -199,6 +217,8 @@ class _$_RepositoryDetailsStateLoading
     TResult Function(_RepositoryDetailsStateError value)? error,
     TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -304,6 +324,7 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
     required TResult Function(List<Issue> issues, bool loadingMore) loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function() showNoMoreIssuesSnackBar,
   }) {
     return loaded(issues, loadingMore);
   }
@@ -315,6 +336,7 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
     TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function()? showNoMoreIssuesSnackBar,
   }) {
     return loaded?.call(issues, loadingMore);
   }
@@ -326,6 +348,7 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
     TResult Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function()? showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -342,6 +365,9 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
     required TResult Function(_RepositoryDetailsStateError value) error,
     required TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(
+            _RepositoryDetailsStateShowNoMoreIssuesSnackBar value)
+        showNoMoreIssuesSnackBar,
   }) {
     return loaded(this);
   }
@@ -354,6 +380,8 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
     TResult? Function(_RepositoryDetailsStateError value)? error,
     TResult? Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult? Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
   }) {
     return loaded?.call(this);
   }
@@ -366,6 +394,8 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
     TResult Function(_RepositoryDetailsStateError value)? error,
     TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -458,6 +488,7 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
     required TResult Function(List<Issue> issues, bool loadingMore) loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function() showNoMoreIssuesSnackBar,
   }) {
     return error(this.error);
   }
@@ -469,6 +500,7 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
     TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function()? showNoMoreIssuesSnackBar,
   }) {
     return error?.call(this.error);
   }
@@ -480,6 +512,7 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
     TResult Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function()? showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -496,6 +529,9 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
     required TResult Function(_RepositoryDetailsStateError value) error,
     required TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(
+            _RepositoryDetailsStateShowNoMoreIssuesSnackBar value)
+        showNoMoreIssuesSnackBar,
   }) {
     return error(this);
   }
@@ -508,6 +544,8 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
     TResult? Function(_RepositoryDetailsStateError value)? error,
     TResult? Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult? Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
   }) {
     return error?.call(this);
   }
@@ -520,6 +558,8 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
     TResult Function(_RepositoryDetailsStateError value)? error,
     TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -612,6 +652,7 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
     required TResult Function(List<Issue> issues, bool loadingMore) loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function() showNoMoreIssuesSnackBar,
   }) {
     return showErrorSnackBar(this.error);
   }
@@ -623,6 +664,7 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
     TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function()? showNoMoreIssuesSnackBar,
   }) {
     return showErrorSnackBar?.call(this.error);
   }
@@ -634,6 +676,7 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
     TResult Function(List<Issue> issues, bool loadingMore)? loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
+    TResult Function()? showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (showErrorSnackBar != null) {
@@ -650,6 +693,9 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
     required TResult Function(_RepositoryDetailsStateError value) error,
     required TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)
         showErrorSnackBar,
+    required TResult Function(
+            _RepositoryDetailsStateShowNoMoreIssuesSnackBar value)
+        showNoMoreIssuesSnackBar,
   }) {
     return showErrorSnackBar(this);
   }
@@ -662,6 +708,8 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
     TResult? Function(_RepositoryDetailsStateError value)? error,
     TResult? Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult? Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
   }) {
     return showErrorSnackBar?.call(this);
   }
@@ -674,6 +722,8 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
     TResult Function(_RepositoryDetailsStateError value)? error,
     TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)?
         showErrorSnackBar,
+    TResult Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (showErrorSnackBar != null) {
@@ -693,4 +743,141 @@ abstract class _RepositoryDetailsStateShowErrorSnackBar
   _$$_RepositoryDetailsStateShowErrorSnackBarCopyWith<
           _$_RepositoryDetailsStateShowErrorSnackBar>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_RepositoryDetailsStateShowNoMoreIssuesSnackBarCopyWith<
+    $Res> {
+  factory _$$_RepositoryDetailsStateShowNoMoreIssuesSnackBarCopyWith(
+          _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar value,
+          $Res Function(_$_RepositoryDetailsStateShowNoMoreIssuesSnackBar)
+              then) =
+      __$$_RepositoryDetailsStateShowNoMoreIssuesSnackBarCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_RepositoryDetailsStateShowNoMoreIssuesSnackBarCopyWithImpl<$Res>
+    extends _$RepositoryDetailsStateCopyWithImpl<$Res,
+        _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar>
+    implements
+        _$$_RepositoryDetailsStateShowNoMoreIssuesSnackBarCopyWith<$Res> {
+  __$$_RepositoryDetailsStateShowNoMoreIssuesSnackBarCopyWithImpl(
+      _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar _value,
+      $Res Function(_$_RepositoryDetailsStateShowNoMoreIssuesSnackBar) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar
+    implements _RepositoryDetailsStateShowNoMoreIssuesSnackBar {
+  const _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar();
+
+  @override
+  String toString() {
+    return 'RepositoryDetailsState.showNoMoreIssuesSnackBar()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(Object error) error,
+    required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function() showNoMoreIssuesSnackBar,
+  }) {
+    return showNoMoreIssuesSnackBar();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(Object error)? error,
+    TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function()? showNoMoreIssuesSnackBar,
+  }) {
+    return showNoMoreIssuesSnackBar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(Object error)? error,
+    TResult Function(Object error)? showErrorSnackBar,
+    TResult Function()? showNoMoreIssuesSnackBar,
+    required TResult orElse(),
+  }) {
+    if (showNoMoreIssuesSnackBar != null) {
+      return showNoMoreIssuesSnackBar();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RepositoryDetailsStateLoading value) loading,
+    required TResult Function(_RepositoryDetailsStateLoaded value) loaded,
+    required TResult Function(_RepositoryDetailsStateError value) error,
+    required TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)
+        showErrorSnackBar,
+    required TResult Function(
+            _RepositoryDetailsStateShowNoMoreIssuesSnackBar value)
+        showNoMoreIssuesSnackBar,
+  }) {
+    return showNoMoreIssuesSnackBar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_RepositoryDetailsStateLoading value)? loading,
+    TResult? Function(_RepositoryDetailsStateLoaded value)? loaded,
+    TResult? Function(_RepositoryDetailsStateError value)? error,
+    TResult? Function(_RepositoryDetailsStateShowErrorSnackBar value)?
+        showErrorSnackBar,
+    TResult? Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
+  }) {
+    return showNoMoreIssuesSnackBar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RepositoryDetailsStateLoading value)? loading,
+    TResult Function(_RepositoryDetailsStateLoaded value)? loaded,
+    TResult Function(_RepositoryDetailsStateError value)? error,
+    TResult Function(_RepositoryDetailsStateShowErrorSnackBar value)?
+        showErrorSnackBar,
+    TResult Function(_RepositoryDetailsStateShowNoMoreIssuesSnackBar value)?
+        showNoMoreIssuesSnackBar,
+    required TResult orElse(),
+  }) {
+    if (showNoMoreIssuesSnackBar != null) {
+      return showNoMoreIssuesSnackBar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RepositoryDetailsStateShowNoMoreIssuesSnackBar
+    implements RepositoryDetailsState, RepositoryDetailsStateListener {
+  const factory _RepositoryDetailsStateShowNoMoreIssuesSnackBar() =
+      _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar;
 }

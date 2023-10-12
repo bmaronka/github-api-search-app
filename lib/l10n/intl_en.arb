@@ -16,5 +16,7 @@
   "open": "Open",
   "closed": "Closed",
   "emptyRepositoriesMessage": "Unfortunately, there are no repositories. Please, try different phrase",
-  "emptyIssuesMessage":"Unfortunately, there are no issues"
+  "emptyIssuesMessage":"Unfortunately, there are no issues",
+  "noMoreRepositories": "No more repositories",
+  "noMoreIssues": "No more issues"
 }

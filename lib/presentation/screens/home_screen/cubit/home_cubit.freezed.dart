@@ -24,6 +24,7 @@ mixin _$HomeState {
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function(ThemeType theme) changeThemeMode,
+    required TResult Function() showNoMoreRepositoriesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$HomeState {
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function(ThemeType theme)? changeThemeMode,
+    TResult? Function()? showNoMoreRepositoriesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$HomeState {
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function(ThemeType theme)? changeThemeMode,
+    TResult Function()? showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +57,8 @@ mixin _$HomeState {
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
     required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+    required TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)
+        showNoMoreRepositoriesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +67,8 @@ mixin _$HomeState {
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult? Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +77,8 @@ mixin _$HomeState {
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -209,6 +218,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function(ThemeType theme) changeThemeMode,
+    required TResult Function() showNoMoreRepositoriesSnackBar,
   }) {
     return loaded(repositories, loading, loadingMore, wasSearched);
   }
@@ -222,6 +232,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function(ThemeType theme)? changeThemeMode,
+    TResult? Function()? showNoMoreRepositoriesSnackBar,
   }) {
     return loaded?.call(repositories, loading, loadingMore, wasSearched);
   }
@@ -235,6 +246,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function(ThemeType theme)? changeThemeMode,
+    TResult Function()? showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -251,6 +263,8 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
     required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+    required TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)
+        showNoMoreRepositoriesSnackBar,
   }) {
     return loaded(this);
   }
@@ -262,6 +276,8 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult? Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
   }) {
     return loaded?.call(this);
   }
@@ -273,6 +289,8 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -366,6 +384,7 @@ class _$_HomeStateError implements _HomeStateError {
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function(ThemeType theme) changeThemeMode,
+    required TResult Function() showNoMoreRepositoriesSnackBar,
   }) {
     return error(this.error);
   }
@@ -379,6 +398,7 @@ class _$_HomeStateError implements _HomeStateError {
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function(ThemeType theme)? changeThemeMode,
+    TResult? Function()? showNoMoreRepositoriesSnackBar,
   }) {
     return error?.call(this.error);
   }
@@ -392,6 +412,7 @@ class _$_HomeStateError implements _HomeStateError {
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function(ThemeType theme)? changeThemeMode,
+    TResult Function()? showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -408,6 +429,8 @@ class _$_HomeStateError implements _HomeStateError {
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
     required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+    required TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)
+        showNoMoreRepositoriesSnackBar,
   }) {
     return error(this);
   }
@@ -419,6 +442,8 @@ class _$_HomeStateError implements _HomeStateError {
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult? Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
   }) {
     return error?.call(this);
   }
@@ -430,6 +455,8 @@ class _$_HomeStateError implements _HomeStateError {
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -519,6 +546,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function(ThemeType theme) changeThemeMode,
+    required TResult Function() showNoMoreRepositoriesSnackBar,
   }) {
     return showErrorSnackBar(this.error);
   }
@@ -532,6 +560,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function(ThemeType theme)? changeThemeMode,
+    TResult? Function()? showNoMoreRepositoriesSnackBar,
   }) {
     return showErrorSnackBar?.call(this.error);
   }
@@ -545,6 +574,7 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function(ThemeType theme)? changeThemeMode,
+    TResult Function()? showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (showErrorSnackBar != null) {
@@ -561,6 +591,8 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
     required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+    required TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)
+        showNoMoreRepositoriesSnackBar,
   }) {
     return showErrorSnackBar(this);
   }
@@ -572,6 +604,8 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult? Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
   }) {
     return showErrorSnackBar?.call(this);
   }
@@ -583,6 +617,8 @@ class _$_HomeStateShowErrorSnackBar implements _HomeStateShowErrorSnackBar {
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (showErrorSnackBar != null) {
@@ -675,6 +711,7 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function(ThemeType theme) changeThemeMode,
+    required TResult Function() showNoMoreRepositoriesSnackBar,
   }) {
     return changeThemeMode(theme);
   }
@@ -688,6 +725,7 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function(ThemeType theme)? changeThemeMode,
+    TResult? Function()? showNoMoreRepositoriesSnackBar,
   }) {
     return changeThemeMode?.call(theme);
   }
@@ -701,6 +739,7 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function(ThemeType theme)? changeThemeMode,
+    TResult Function()? showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (changeThemeMode != null) {
@@ -717,6 +756,8 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
     required TResult Function(_HomeStateShowErrorSnackBar value)
         showErrorSnackBar,
     required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+    required TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)
+        showNoMoreRepositoriesSnackBar,
   }) {
     return changeThemeMode(this);
   }
@@ -728,6 +769,8 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
     TResult? Function(_HomeStateError value)? error,
     TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult? Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
   }) {
     return changeThemeMode?.call(this);
   }
@@ -739,6 +782,8 @@ class _$_HomeStateChangeThemeMode implements _HomeStateChangeThemeMode {
     TResult Function(_HomeStateError value)? error,
     TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
     TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
     required TResult orElse(),
   }) {
     if (changeThemeMode != null) {
@@ -757,4 +802,141 @@ abstract class _HomeStateChangeThemeMode
   @JsonKey(ignore: true)
   _$$_HomeStateChangeThemeModeCopyWith<_$_HomeStateChangeThemeMode>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_HomeStateShowNoMoreRepositoriesSnackBarCopyWith<$Res> {
+  factory _$$_HomeStateShowNoMoreRepositoriesSnackBarCopyWith(
+          _$_HomeStateShowNoMoreRepositoriesSnackBar value,
+          $Res Function(_$_HomeStateShowNoMoreRepositoriesSnackBar) then) =
+      __$$_HomeStateShowNoMoreRepositoriesSnackBarCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_HomeStateShowNoMoreRepositoriesSnackBarCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res,
+        _$_HomeStateShowNoMoreRepositoriesSnackBar>
+    implements _$$_HomeStateShowNoMoreRepositoriesSnackBarCopyWith<$Res> {
+  __$$_HomeStateShowNoMoreRepositoriesSnackBarCopyWithImpl(
+      _$_HomeStateShowNoMoreRepositoriesSnackBar _value,
+      $Res Function(_$_HomeStateShowNoMoreRepositoriesSnackBar) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_HomeStateShowNoMoreRepositoriesSnackBar
+    implements _HomeStateShowNoMoreRepositoriesSnackBar {
+  const _$_HomeStateShowNoMoreRepositoriesSnackBar();
+
+  @override
+  String toString() {
+    return 'HomeState.showNoMoreRepositoriesSnackBar()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_HomeStateShowNoMoreRepositoriesSnackBar);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)
+        loaded,
+    required TResult Function(Object error) error,
+    required TResult Function(Object error) showErrorSnackBar,
+    required TResult Function(ThemeType theme) changeThemeMode,
+    required TResult Function() showNoMoreRepositoriesSnackBar,
+  }) {
+    return showNoMoreRepositoriesSnackBar();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
+        loaded,
+    TResult? Function(Object error)? error,
+    TResult? Function(Object error)? showErrorSnackBar,
+    TResult? Function(ThemeType theme)? changeThemeMode,
+    TResult? Function()? showNoMoreRepositoriesSnackBar,
+  }) {
+    return showNoMoreRepositoriesSnackBar?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<Repository> repositories, bool loading,
+            bool loadingMore, bool wasSearched)?
+        loaded,
+    TResult Function(Object error)? error,
+    TResult Function(Object error)? showErrorSnackBar,
+    TResult Function(ThemeType theme)? changeThemeMode,
+    TResult Function()? showNoMoreRepositoriesSnackBar,
+    required TResult orElse(),
+  }) {
+    if (showNoMoreRepositoriesSnackBar != null) {
+      return showNoMoreRepositoriesSnackBar();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_HomeStateLoaded value) loaded,
+    required TResult Function(_HomeStateError value) error,
+    required TResult Function(_HomeStateShowErrorSnackBar value)
+        showErrorSnackBar,
+    required TResult Function(_HomeStateChangeThemeMode value) changeThemeMode,
+    required TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)
+        showNoMoreRepositoriesSnackBar,
+  }) {
+    return showNoMoreRepositoriesSnackBar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_HomeStateLoaded value)? loaded,
+    TResult? Function(_HomeStateError value)? error,
+    TResult? Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult? Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult? Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
+  }) {
+    return showNoMoreRepositoriesSnackBar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_HomeStateLoaded value)? loaded,
+    TResult Function(_HomeStateError value)? error,
+    TResult Function(_HomeStateShowErrorSnackBar value)? showErrorSnackBar,
+    TResult Function(_HomeStateChangeThemeMode value)? changeThemeMode,
+    TResult Function(_HomeStateShowNoMoreRepositoriesSnackBar value)?
+        showNoMoreRepositoriesSnackBar,
+    required TResult orElse(),
+  }) {
+    if (showNoMoreRepositoriesSnackBar != null) {
+      return showNoMoreRepositoriesSnackBar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _HomeStateShowNoMoreRepositoriesSnackBar
+    implements HomeState, HomeStateListener {
+  const factory _HomeStateShowNoMoreRepositoriesSnackBar() =
+      _$_HomeStateShowNoMoreRepositoriesSnackBar;
 }

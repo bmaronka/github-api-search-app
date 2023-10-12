@@ -16,5 +16,7 @@
   "open": "Otwórz",
   "closed": "Zamknij",
   "emptyRepositoriesMessage": "Niestety nie ma tu żadnych repozytoriów. Spróbuj inną frazę",
-  "emptyIssuesMessage":"Niestety nie ma tu żadnych problemów"
+  "emptyIssuesMessage":"Niestety nie ma tu żadnych problemów",
+  "noMoreRepositories": "Nie ma więcej repozytoriów",
+  "noMoreIssues": "Nie ma więcej problemów"
 }

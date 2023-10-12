@@ -40,6 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "hint": MessageLookupByLibrary.simpleMessage("Type repository name"),
         "issueNumber": m0,
         "issues": MessageLookupByLibrary.simpleMessage("Issues"),
+        "noMoreIssues": MessageLookupByLibrary.simpleMessage("No more issues"),
+        "noMoreRepositories":
+            MessageLookupByLibrary.simpleMessage("No more repositories"),
         "offlineErrorTitle":
             MessageLookupByLibrary.simpleMessage("Oops! You\'re offline"),
         "open": MessageLookupByLibrary.simpleMessage("Open"),

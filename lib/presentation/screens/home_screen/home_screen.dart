@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:github_search_app/generated/l10n.dart';
 import 'package:github_search_app/presentation/screens/error_page/error_page.dart';
 import 'package:github_search_app/presentation/screens/home_screen/body/home_screen_body.dart';
 import 'package:github_search_app/presentation/screens/home_screen/cubit/home_cubit.dart';
@@ -52,6 +53,7 @@ class HomeScreen extends HookWidget {
   void _listener(_, HomeState state, BuildContext context) => state.maybeWhen(
         showErrorSnackBar: context.showErrorSnackBar,
         changeThemeMode: (theme) => Provider.of<AppThemeModel>(context, listen: false).setTheme = theme,
+        showNoMoreRepositoriesSnackBar: () => context.showBottomSnackBar(title: Strings.of(context).noMoreRepositories),
         orElse: doNothing,
       );
 }
