@@ -6,7 +6,7 @@ import 'package:github_search_app/data/model/offline_error.dart';
 import 'package:github_search_app/domain/issues/model/issue.dart';
 import 'package:github_search_app/domain/model/shared/owner.dart';
 import 'package:github_search_app/domain/repositories/model/repository.dart';
-import 'package:github_search_app/domain/use_case/repositories/get_repo_issues_use_case.dart';
+import 'package:github_search_app/domain/use_case/issues/get_repo_issues_use_case.dart';
 import 'package:github_search_app/presentation/screens/repository_details_screen/cubit/repository_details_cubit.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
