@@ -30,9 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "all": MessageLookupByLibrary.simpleMessage("Wszystkie"),
         "appTitle":
             MessageLookupByLibrary.simpleMessage("Znandź repozytorium Github"),
-        "closed": MessageLookupByLibrary.simpleMessage("Zamknij"),
+        "closed": MessageLookupByLibrary.simpleMessage("Zamknięte"),
         "emptyIssuesMessage": MessageLookupByLibrary.simpleMessage(
             "Niestety nie ma tu żadnych problemów"),
         "emptyRepositoriesMessage": MessageLookupByLibrary.simpleMessage(
@@ -47,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Nie ma więcej repozytoriów"),
         "offlineErrorTitle":
             MessageLookupByLibrary.simpleMessage("Ups! Jesteś offline"),
-        "open": MessageLookupByLibrary.simpleMessage("Otwórz"),
+        "open": MessageLookupByLibrary.simpleMessage("Otwarte"),
         "reload": MessageLookupByLibrary.simpleMessage("Odśwież"),
         "repositoryAuthor": m1,
         "repositoryDescription": m2,

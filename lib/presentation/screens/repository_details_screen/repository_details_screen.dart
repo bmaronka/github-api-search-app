@@ -37,11 +37,12 @@ class RepositoryDetailsScreen extends HookWidget {
 
     return state.maybeWhen(
       loading: LoadingPage.new,
-      loaded: (issues, loadingMore) => RepositoryDetailsBody(
+      loaded: (issues, loadingMore, statusIndex) => RepositoryDetailsBody(
         cubit: cubit,
         repository: repository,
         issues: issues,
         loadingMore: loadingMore,
+        statusIndex: statusIndex,
       ),
       error: (error) => ErrorPage(
         error,

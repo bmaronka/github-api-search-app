@@ -9,6 +9,7 @@ part 'issue.freezed.dart';
 
 enum IssueStatus {
   open,
+  all,
   closed;
 
   static IssueStatus fromString(String state) {
@@ -18,18 +19,20 @@ enum IssueStatus {
       case 'closed':
         return IssueStatus.closed;
       default:
-        return IssueStatus.open;
+        return IssueStatus.all;
     }
   }
 
   Color getColor(BuildContext context) => switch (this) {
         IssueStatus.open => context.getColors().green,
         IssueStatus.closed => context.getColors().violet,
+        IssueStatus.all => context.getColors().primary,
       };
 
   String get label => switch (this) {
         IssueStatus.open => Strings.current.open,
         IssueStatus.closed => Strings.current.closed,
+        IssueStatus.all => Strings.current.all,
       };
 }
 

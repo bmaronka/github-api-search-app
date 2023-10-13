@@ -23,8 +23,25 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
   final _issues = <Issue>[];
   late Repository _repository;
   int _page = 1;
+  int _statusIndex = 1;
 
   bool get _isScrolledToBottom => scrollController.position.maxScrollExtent == scrollController.offset;
+
+  List<Issue> get _issuesDueToFilter {
+    late List<Issue> issues;
+    final status = IssueStatus.values[_statusIndex];
+
+    switch (status) {
+      case IssueStatus.open:
+        issues = _issues.openedIssues;
+      case IssueStatus.all:
+        issues = _issues;
+      case IssueStatus.closed:
+        issues = _issues.closedIssues;
+    }
+
+    return issues;
+  }
 
   Future<void> init(Repository repository) async {
     _repository = repository;
@@ -37,7 +54,7 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
   void _removeLoadMoreListener() => scrollController.removeListener(_loadMore);
 
   void _loadMore() => state.whenOrNull(
-        loaded: (issues, loadingMore) {
+        loaded: (issues, loadingMore, statusIndex) {
           if (_isScrolledToBottom && !loadingMore) {
             _page++;
             _emitLoaded(loadingMore: true);
@@ -77,10 +94,16 @@ class RepositoryDetailsCubit extends AppCubit<RepositoryDetailsState> {
     }
   }
 
+  void setFilterStatus(int index) {
+    _statusIndex = index;
+    _emitLoaded();
+  }
+
   void _emitLoaded({bool loadingMore = false}) => emit(
         RepositoryDetailsState.loaded(
-          issues: [..._issues],
+          issues: [..._issuesDueToFilter],
           loadingMore: loadingMore,
+          statusIndex: _statusIndex,
         ),
       );
 

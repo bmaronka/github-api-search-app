@@ -9,6 +9,7 @@ class RepositoryDetailsState with _$RepositoryDetailsState {
   const factory RepositoryDetailsState.loaded({
     required List<Issue> issues,
     required bool loadingMore,
+    required int statusIndex,
   }) = _RepositoryDetailsStateLoaded;
 
   @Implements<RepositoryDetailsStateBuilder>()

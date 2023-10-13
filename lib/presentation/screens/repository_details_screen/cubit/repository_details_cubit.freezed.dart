@@ -19,7 +19,9 @@ mixin _$RepositoryDetailsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(
+            List<Issue> issues, bool loadingMore, int statusIndex)
+        loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function() showNoMoreIssuesSnackBar,
@@ -28,7 +30,8 @@ mixin _$RepositoryDetailsState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function()? showNoMoreIssuesSnackBar,
@@ -37,7 +40,8 @@ mixin _$RepositoryDetailsState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function()? showNoMoreIssuesSnackBar,
@@ -144,7 +148,9 @@ class _$_RepositoryDetailsStateLoading
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(
+            List<Issue> issues, bool loadingMore, int statusIndex)
+        loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function() showNoMoreIssuesSnackBar,
@@ -156,7 +162,8 @@ class _$_RepositoryDetailsStateLoading
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function()? showNoMoreIssuesSnackBar,
@@ -168,7 +175,8 @@ class _$_RepositoryDetailsStateLoading
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function()? showNoMoreIssuesSnackBar,
@@ -241,7 +249,7 @@ abstract class _$$_RepositoryDetailsStateLoadedCopyWith<$Res> {
           $Res Function(_$_RepositoryDetailsStateLoaded) then) =
       __$$_RepositoryDetailsStateLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Issue> issues, bool loadingMore});
+  $Res call({List<Issue> issues, bool loadingMore, int statusIndex});
 }
 
 /// @nodoc
@@ -259,6 +267,7 @@ class __$$_RepositoryDetailsStateLoadedCopyWithImpl<$Res>
   $Res call({
     Object? issues = null,
     Object? loadingMore = null,
+    Object? statusIndex = null,
   }) {
     return _then(_$_RepositoryDetailsStateLoaded(
       issues: null == issues
@@ -269,6 +278,10 @@ class __$$_RepositoryDetailsStateLoadedCopyWithImpl<$Res>
           ? _value.loadingMore
           : loadingMore // ignore: cast_nullable_to_non_nullable
               as bool,
+      statusIndex: null == statusIndex
+          ? _value.statusIndex
+          : statusIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -277,7 +290,9 @@ class __$$_RepositoryDetailsStateLoadedCopyWithImpl<$Res>
 
 class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
   const _$_RepositoryDetailsStateLoaded(
-      {required final List<Issue> issues, required this.loadingMore})
+      {required final List<Issue> issues,
+      required this.loadingMore,
+      required this.statusIndex})
       : _issues = issues;
 
   final List<Issue> _issues;
@@ -290,10 +305,12 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
 
   @override
   final bool loadingMore;
+  @override
+  final int statusIndex;
 
   @override
   String toString() {
-    return 'RepositoryDetailsState.loaded(issues: $issues, loadingMore: $loadingMore)';
+    return 'RepositoryDetailsState.loaded(issues: $issues, loadingMore: $loadingMore, statusIndex: $statusIndex)';
   }
 
   @override
@@ -303,12 +320,14 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
             other is _$_RepositoryDetailsStateLoaded &&
             const DeepCollectionEquality().equals(other._issues, _issues) &&
             (identical(other.loadingMore, loadingMore) ||
-                other.loadingMore == loadingMore));
+                other.loadingMore == loadingMore) &&
+            (identical(other.statusIndex, statusIndex) ||
+                other.statusIndex == statusIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_issues), loadingMore);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_issues), loadingMore, statusIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -321,38 +340,42 @@ class _$_RepositoryDetailsStateLoaded implements _RepositoryDetailsStateLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(
+            List<Issue> issues, bool loadingMore, int statusIndex)
+        loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function() showNoMoreIssuesSnackBar,
   }) {
-    return loaded(issues, loadingMore);
+    return loaded(issues, loadingMore, statusIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function()? showNoMoreIssuesSnackBar,
   }) {
-    return loaded?.call(issues, loadingMore);
+    return loaded?.call(issues, loadingMore, statusIndex);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function()? showNoMoreIssuesSnackBar,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(issues, loadingMore);
+      return loaded(issues, loadingMore, statusIndex);
     }
     return orElse();
   }
@@ -409,10 +432,12 @@ abstract class _RepositoryDetailsStateLoaded
     implements RepositoryDetailsState, RepositoryDetailsStateBuilder {
   const factory _RepositoryDetailsStateLoaded(
       {required final List<Issue> issues,
-      required final bool loadingMore}) = _$_RepositoryDetailsStateLoaded;
+      required final bool loadingMore,
+      required final int statusIndex}) = _$_RepositoryDetailsStateLoaded;
 
   List<Issue> get issues;
   bool get loadingMore;
+  int get statusIndex;
   @JsonKey(ignore: true)
   _$$_RepositoryDetailsStateLoadedCopyWith<_$_RepositoryDetailsStateLoaded>
       get copyWith => throw _privateConstructorUsedError;
@@ -485,7 +510,9 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(
+            List<Issue> issues, bool loadingMore, int statusIndex)
+        loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function() showNoMoreIssuesSnackBar,
@@ -497,7 +524,8 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function()? showNoMoreIssuesSnackBar,
@@ -509,7 +537,8 @@ class _$_RepositoryDetailsStateError implements _RepositoryDetailsStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function()? showNoMoreIssuesSnackBar,
@@ -649,7 +678,9 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(
+            List<Issue> issues, bool loadingMore, int statusIndex)
+        loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function() showNoMoreIssuesSnackBar,
@@ -661,7 +692,8 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function()? showNoMoreIssuesSnackBar,
@@ -673,7 +705,8 @@ class _$_RepositoryDetailsStateShowErrorSnackBar
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function()? showNoMoreIssuesSnackBar,
@@ -792,7 +825,9 @@ class _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Issue> issues, bool loadingMore) loaded,
+    required TResult Function(
+            List<Issue> issues, bool loadingMore, int statusIndex)
+        loaded,
     required TResult Function(Object error) error,
     required TResult Function(Object error) showErrorSnackBar,
     required TResult Function() showNoMoreIssuesSnackBar,
@@ -804,7 +839,8 @@ class _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult? Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult? Function(Object error)? error,
     TResult? Function(Object error)? showErrorSnackBar,
     TResult? Function()? showNoMoreIssuesSnackBar,
@@ -816,7 +852,8 @@ class _$_RepositoryDetailsStateShowNoMoreIssuesSnackBar
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Issue> issues, bool loadingMore)? loaded,
+    TResult Function(List<Issue> issues, bool loadingMore, int statusIndex)?
+        loaded,
     TResult Function(Object error)? error,
     TResult Function(Object error)? showErrorSnackBar,
     TResult Function()? showNoMoreIssuesSnackBar,

@@ -200,6 +200,16 @@ class Strings {
     );
   }
 
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Unfortunately, there are no repositories. Please, try different phrase`
   String get emptyRepositoriesMessage {
     return Intl.message(
