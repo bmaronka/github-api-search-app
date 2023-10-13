@@ -55,7 +55,7 @@ class Issue with _$Issue {
 }
 
 extension IssuesListExtension on List<Issue> {
-  List<Issue> get openIssues => where((issue) => issue.status == IssueStatus.open).toList(growable: false);
+  List<Issue> get openedIssues => where((issue) => issue.status == IssueStatus.open).toList(growable: false);
 
   List<Issue> get closedIssues => where((issue) => issue.status == IssueStatus.closed).toList(growable: false);
 }
