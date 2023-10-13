@@ -31,6 +31,57 @@ void main() {
     cubit = RepositoryDetailsCubit(getRepoIssuesUseCase);
   });
 
+  const testOwner = 'owner';
+  const testRepo = 'repo';
+  const testPage = 1;
+  final repository = Repository(
+    id: 1,
+    name: testRepo,
+    description: 'description',
+    owner: Owner(id: 1, name: testOwner, avatarUrl: 'www.avatarUrl1.com'),
+    stars: 1,
+  );
+  final openedIssues = [
+    Issue(
+      id: 1,
+      url: 'www.issueUrl1.com',
+      number: 1,
+      status: IssueStatus.open,
+      title: 'Issue 1',
+      assignee: Owner(id: 1, name: 'Owner 1', avatarUrl: 'www.avatar1.com'),
+    ),
+    Issue(
+      id: 2,
+      url: 'www.issueUrl2.com',
+      number: 2,
+      status: IssueStatus.open,
+      title: 'Issue 2',
+      assignee: Owner(id: 1, name: 'Owner 1', avatarUrl: 'www.avatar1.com'),
+    ),
+  ];
+  final closedIssues = [
+    Issue(
+      id: 3,
+      url: 'www.issueUrl3.com',
+      number: 3,
+      status: IssueStatus.closed,
+      title: 'Issue 3',
+      assignee: Owner(id: 1, name: 'Owner 1', avatarUrl: 'www.avatar1.com'),
+    ),
+    Issue(
+      id: 4,
+      url: 'www.issueUrl4.com',
+      number: 4,
+      status: IssueStatus.closed,
+      title: 'Issue 4',
+      assignee: Owner(id: 1, name: 'Owner 1', avatarUrl: 'www.avatar1.com'),
+    ),
+  ];
+  final issues = [
+    ...openedIssues,
+    ...closedIssues,
+  ];
+
   test(
     'has initial loading state',
     () {
@@ -44,43 +95,6 @@ void main() {
   group(
     'test _fetchRepoIssues',
     () {
-      const testOwner = 'owner';
-      const testRepo = 'repo';
-      const testPage = 1;
-      final repository = Repository(
-        id: 1,
-        name: testRepo,
-        description: 'description',
-        owner: Owner(id: 1, name: testOwner, avatarUrl: 'www.avatarUrl1.com'),
-        stars: 1,
-      );
-      final issues = [
-        Issue(
-          id: 1,
-          url: 'www.issueUrl1.com',
-          number: 1,
-          status: IssueStatus.open,
-          title: 'Issue 1',
-          assignee: Owner(id: 1, name: 'Owner 1', avatarUrl: 'www.avatar1.com'),
-        ),
-        Issue(
-          id: 2,
-          url: 'www.issueUrl2.com',
-          number: 2,
-          status: IssueStatus.closed,
-          title: 'Issue 2',
-          assignee: Owner(id: 2, name: 'Owner 2', avatarUrl: 'www.avatar2.com'),
-        ),
-        Issue(
-          id: 3,
-          url: 'www.issueUrl3.com',
-          number: 3,
-          status: IssueStatus.closed,
-          title: 'Issue 3',
-          assignee: null,
-        ),
-      ];
-
       blocTest(
         'getting issues succesfully',
         act: (_) async {
@@ -93,6 +107,7 @@ void main() {
           RepositoryDetailsState.loaded(
             issues: issues,
             loadingMore: false,
+            statusIndex: 1,
           ),
         ],
       );
@@ -145,9 +160,45 @@ void main() {
           RepositoryDetailsState.loaded(
             issues: issues,
             loadingMore: false,
+            statusIndex: 1,
           ),
         ],
       );
     },
+  );
+
+  blocTest(
+    'test setFilterStatus',
+    act: (_) async {
+      when(getRepoIssuesUseCase(testOwner, testRepo, page: testPage)).thenAnswer((_) => Future.value(issues));
+
+      await cubit.init(repository);
+      cubit.setFilterStatus(0);
+      cubit.setFilterStatus(2);
+      cubit.setFilterStatus(1);
+    },
+    build: () => cubit,
+    expect: () => [
+      RepositoryDetailsState.loaded(
+        issues: issues,
+        loadingMore: false,
+        statusIndex: 1,
+      ),
+      RepositoryDetailsState.loaded(
+        issues: openedIssues,
+        loadingMore: false,
+        statusIndex: 0,
+      ),
+      RepositoryDetailsState.loaded(
+        issues: closedIssues,
+        loadingMore: false,
+        statusIndex: 2,
+      ),
+      RepositoryDetailsState.loaded(
+        issues: issues,
+        loadingMore: false,
+        statusIndex: 1,
+      ),
+    ],
   );
 }
